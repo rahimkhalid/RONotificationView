@@ -14,14 +14,17 @@
 		ED1A09EE21995DCD004CCE54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A09EC21995DCD004CCE54 /* LaunchScreen.storyboard */; };
 		ED1A09F721995E80004CCE54 /* RONotificationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A09F621995E80004CCE54 /* RONotificationConfiguration.swift */; };
 		ED1A09F921995E8E004CCE54 /* RONotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A09F821995E8E004CCE54 /* RONotificationType.swift */; };
-		ED1A09FB21995EA2004CCE54 /* RONotificationConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A09FA21995EA2004CCE54 /* RONotificationConfigurationManager.swift */; };
 		ED1A09FD21995EAE004CCE54 /* RONotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A09FC21995EAE004CCE54 /* RONotificationManager.swift */; };
 		ED1A09FF21995EC0004CCE54 /* RONotificationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A09FE21995EC0004CCE54 /* RONotificationStyle.swift */; };
-		ED1A0A0221995EF3004CCE54 /* RONotificationStatusBarBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBanner.swift */; };
-		ED1A0A0421995F06004CCE54 /* RONotificationMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0321995F06004CCE54 /* RONotificationMessageView.swift */; };
+		ED1A0A0221995EF3004CCE54 /* RONotificationStatusBarBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBannerView.swift */; };
+		ED1A0A0421995F06004CCE54 /* RONotificationMessageBannnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0321995F06004CCE54 /* RONotificationMessageBannnerView.swift */; };
 		ED1A0A0621995F35004CCE54 /* RONotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0521995F35004CCE54 /* RONotificationView.swift */; };
-		ED1A0A082199614F004CCE54 /* RONotificationStatusBarBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A072199614F004CCE54 /* RONotificationStatusBarBanner.xib */; };
-		ED1A0A0A21996155004CCE54 /* RONotificationMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A0921996155004CCE54 /* RONotificationMessageView.xib */; };
+		ED1A0A082199614F004CCE54 /* RONotificationStatusBarBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A072199614F004CCE54 /* RONotificationStatusBarBannerView.xib */; };
+		ED1A0A0A21996155004CCE54 /* RONotificationMessageBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A0921996155004CCE54 /* RONotificationMessageBannerView.xib */; };
+		ED1A0A0D2199A265004CCE54 /* RONotificationStatusBarBannner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0C2199A265004CCE54 /* RONotificationStatusBarBannner.swift */; };
+		ED1A0A0F2199A2E3004CCE54 /* RONotificationMessageBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A0E2199A2E3004CCE54 /* RONotificationMessageBanner.swift */; };
+		ED1A0A132199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A122199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift */; };
+		ED1A0A152199CEC6004CCE54 /* RONotificationMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A142199CEC6004CCE54 /* RONotificationMessageConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +37,17 @@
 		ED1A09EF21995DCD004CCE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED1A09F621995E80004CCE54 /* RONotificationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationConfiguration.swift; sourceTree = "<group>"; };
 		ED1A09F821995E8E004CCE54 /* RONotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationType.swift; sourceTree = "<group>"; };
-		ED1A09FA21995EA2004CCE54 /* RONotificationConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationConfigurationManager.swift; sourceTree = "<group>"; };
 		ED1A09FC21995EAE004CCE54 /* RONotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationManager.swift; sourceTree = "<group>"; };
 		ED1A09FE21995EC0004CCE54 /* RONotificationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationStyle.swift; sourceTree = "<group>"; };
-		ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationStatusBarBanner.swift; sourceTree = "<group>"; };
-		ED1A0A0321995F06004CCE54 /* RONotificationMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationMessageView.swift; sourceTree = "<group>"; };
+		ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationStatusBarBannerView.swift; sourceTree = "<group>"; };
+		ED1A0A0321995F06004CCE54 /* RONotificationMessageBannnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationMessageBannnerView.swift; sourceTree = "<group>"; };
 		ED1A0A0521995F35004CCE54 /* RONotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationView.swift; sourceTree = "<group>"; };
-		ED1A0A072199614F004CCE54 /* RONotificationStatusBarBanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RONotificationStatusBarBanner.xib; sourceTree = "<group>"; };
-		ED1A0A0921996155004CCE54 /* RONotificationMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RONotificationMessageView.xib; sourceTree = "<group>"; };
+		ED1A0A072199614F004CCE54 /* RONotificationStatusBarBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RONotificationStatusBarBannerView.xib; sourceTree = "<group>"; };
+		ED1A0A0921996155004CCE54 /* RONotificationMessageBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RONotificationMessageBannerView.xib; sourceTree = "<group>"; };
+		ED1A0A0C2199A265004CCE54 /* RONotificationStatusBarBannner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationStatusBarBannner.swift; sourceTree = "<group>"; };
+		ED1A0A0E2199A2E3004CCE54 /* RONotificationMessageBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationMessageBanner.swift; sourceTree = "<group>"; };
+		ED1A0A122199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationStatusBarBannerConfiguration.swift; sourceTree = "<group>"; };
+		ED1A0A142199CEC6004CCE54 /* RONotificationMessageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationMessageConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +94,14 @@
 		ED1A09F521995E49004CCE54 /* RONotification */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A0A112199CE8C004CCE54 /* RONotificationConfiguration */,
 				ED1A0A0021995EDF004CCE54 /* Views */,
-				ED1A09F621995E80004CCE54 /* RONotificationConfiguration.swift */,
 				ED1A09F821995E8E004CCE54 /* RONotificationType.swift */,
-				ED1A09FA21995EA2004CCE54 /* RONotificationConfigurationManager.swift */,
 				ED1A09FC21995EAE004CCE54 /* RONotificationManager.swift */,
 				ED1A09FE21995EC0004CCE54 /* RONotificationStyle.swift */,
 				ED1A0A0521995F35004CCE54 /* RONotificationView.swift */,
+				ED1A0A0C2199A265004CCE54 /* RONotificationStatusBarBannner.swift */,
+				ED1A0A0E2199A2E3004CCE54 /* RONotificationMessageBanner.swift */,
 			);
 			path = RONotification;
 			sourceTree = "<group>";
@@ -102,12 +109,22 @@
 		ED1A0A0021995EDF004CCE54 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A0A072199614F004CCE54 /* RONotificationStatusBarBanner.xib */,
-				ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBanner.swift */,
-				ED1A0A0921996155004CCE54 /* RONotificationMessageView.xib */,
-				ED1A0A0321995F06004CCE54 /* RONotificationMessageView.swift */,
+				ED1A0A072199614F004CCE54 /* RONotificationStatusBarBannerView.xib */,
+				ED1A0A0121995EF3004CCE54 /* RONotificationStatusBarBannerView.swift */,
+				ED1A0A0921996155004CCE54 /* RONotificationMessageBannerView.xib */,
+				ED1A0A0321995F06004CCE54 /* RONotificationMessageBannnerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ED1A0A112199CE8C004CCE54 /* RONotificationConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A09F621995E80004CCE54 /* RONotificationConfiguration.swift */,
+				ED1A0A122199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift */,
+				ED1A0A142199CEC6004CCE54 /* RONotificationMessageConfiguration.swift */,
+			);
+			path = RONotificationConfiguration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1A0A0A21996155004CCE54 /* RONotificationMessageView.xib in Resources */,
+				ED1A0A0A21996155004CCE54 /* RONotificationMessageBannerView.xib in Resources */,
 				ED1A09EE21995DCD004CCE54 /* LaunchScreen.storyboard in Resources */,
 				ED1A09EB21995DCD004CCE54 /* Assets.xcassets in Resources */,
-				ED1A0A082199614F004CCE54 /* RONotificationStatusBarBanner.xib in Resources */,
+				ED1A0A082199614F004CCE54 /* RONotificationStatusBarBannerView.xib in Resources */,
 				ED1A09E921995DCB004CCE54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,14 +201,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1A0A0621995F35004CCE54 /* RONotificationView.swift in Sources */,
-				ED1A09FB21995EA2004CCE54 /* RONotificationConfigurationManager.swift in Sources */,
 				ED1A09FD21995EAE004CCE54 /* RONotificationManager.swift in Sources */,
 				ED1A09FF21995EC0004CCE54 /* RONotificationStyle.swift in Sources */,
 				ED1A09E621995DCB004CCE54 /* ViewController.swift in Sources */,
+				ED1A0A0D2199A265004CCE54 /* RONotificationStatusBarBannner.swift in Sources */,
+				ED1A0A152199CEC6004CCE54 /* RONotificationMessageConfiguration.swift in Sources */,
 				ED1A09F921995E8E004CCE54 /* RONotificationType.swift in Sources */,
-				ED1A0A0421995F06004CCE54 /* RONotificationMessageView.swift in Sources */,
+				ED1A0A0421995F06004CCE54 /* RONotificationMessageBannnerView.swift in Sources */,
+				ED1A0A132199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift in Sources */,
 				ED1A09E421995DCB004CCE54 /* AppDelegate.swift in Sources */,
-				ED1A0A0221995EF3004CCE54 /* RONotificationStatusBarBanner.swift in Sources */,
+				ED1A0A0F2199A2E3004CCE54 /* RONotificationMessageBanner.swift in Sources */,
+				ED1A0A0221995EF3004CCE54 /* RONotificationStatusBarBannerView.swift in Sources */,
 				ED1A09F721995E80004CCE54 /* RONotificationConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

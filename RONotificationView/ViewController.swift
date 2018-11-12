@@ -45,10 +45,9 @@ class ViewController: UIViewController {
             statusBarBanner.hideBanner()
         }else{
             isNotificationVisible = true
-            let config:[RONotificationStyle:Any] = [.title: "first message",
-                                            .message : "i am aamir",
-                                            .isDragable: true]
-            statusBarBanner = RONotificationView.createStatusBarBanner(config: config)
+            let configuration = RONotificationStatusBarBannerConfiguration(textColor: UIColor.white, backgroundColor: UIColor.gray, message: "Testing")
+            
+            statusBarBanner = RONotificationStatusBarBanner(configuration)
             statusBarBanner.showBanner()
         }
         
@@ -61,10 +60,8 @@ class ViewController: UIViewController {
             messageBanner.hideBanner()
         }else{
             isNotificationVisible = true
-            let config:[RONotificationStyle:Any] = [.title: "first message",
-                                            .message : "i am aamir",
-                                            .isDragable: true]
-            messageBanner = RONotificationView.createMessageBanner(config: config)
+            let configuration = RONotificationMessageConfiguration(textColor: UIColor.white, backgroundColor: UIColor.gray, title: "Message Banner Title", message: "Message Banner Text")
+            messageBanner = RONotificationMessageBanner(configuration)
             messageBanner.showBanner()
         }
         

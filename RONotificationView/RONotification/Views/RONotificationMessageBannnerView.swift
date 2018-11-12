@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationMessageView: UIView {
+class RONotificationMessageBannerView: UIView {
     
     @IBOutlet weak var dragView: UIView!
     @IBOutlet weak var image: UIImageView!
@@ -18,18 +18,20 @@ class RONotificationMessageView: UIView {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
-        let nib = Bundle.main.loadNibNamed("RONotificationMessageView", owner: self, options: nil)
-        let view = (nib?.first as? UIView)! as! RONotificationMessageView
+        
+        let nib = Bundle.main.loadNibNamed("RONotificationMessageBannerView", owner: self, options: nil)
+        let view = (nib?.first as? UIView)! as! RONotificationMessageBannerView
         view.setupUIFor(Configuration: config)
         
         return view
     }
     
     private func setupUIFor(Configuration config: RONotificationConfiguration){
+        
         message.text = config.message
         title.text = config.title
-        activityIndicator.isHidden = !(config.isToShowloader ?? false)
-        dragView.isHidden = !(config.isDragable ?? false)
+        activityIndicator.isHidden = !(config.isToShowLoader ?? false)
+        dragView.isHidden = !(config.isDragable  ?? false)
         image.image = config.image
     }
 }
