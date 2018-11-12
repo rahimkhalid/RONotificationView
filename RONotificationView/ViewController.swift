@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             statusBarBanner.hideBanner()
         }else{
             isNotificationVisible = true
-            let configuration = RONotificationStatusBarBannerConfiguration(textColor: UIColor.white, backgroundColor: UIColor.gray, message: "Testing")
+            let configuration = RONotificationStatusBarBannerConfiguration(messageTextColor: UIColor.white, backgroundColor: UIColor.gray, message: "Testing")
             
             statusBarBanner = RONotificationStatusBarBanner(configuration)
             statusBarBanner.showBanner()
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             messageBanner.hideBanner()
         }else{
             isNotificationVisible = true
-            let configuration = RONotificationMessageConfiguration(textColor: UIColor.white, backgroundColor: UIColor.gray, title: "Message Banner Title", message: "Message Banner Text")
+            let configuration = RONotificationMessageConfiguration(messageTextColor: UIColor.white, titleTextColor: UIColor.white, backgroundColor: UIColor.gray, title: "Message Banner Title", message: "Message Banner Text")
             messageBanner = RONotificationMessageBanner(configuration)
             messageBanner.showBanner()
         }

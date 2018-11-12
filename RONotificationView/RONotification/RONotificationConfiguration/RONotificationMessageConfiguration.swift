@@ -11,9 +11,11 @@ import UIKit
 
 class RONotificationMessageConfiguration: RONotificationConfiguration {
     
-    var font: UIFont
+    var messageFont: UIFont
+    var titleFont: UIFont
     var duration: TimeInterval
-    var textColor: UIColor
+    var titleTextColor: UIColor
+    var messageTextColor: UIColor
     var backgroundColor: UIColor
     var image: UIImage
     var isDragable: Bool
@@ -21,9 +23,11 @@ class RONotificationMessageConfiguration: RONotificationConfiguration {
     var message: String
     var isToShowLoader: Bool
     
-    init(font:UIFont = UIFont.systemFont(ofSize: 11),
+    init(messageFont:UIFont = UIFont.systemFont(ofSize: 11),
+         titleFont:UIFont = UIFont.systemFont(ofSize: 11, weight: .bold),
          duration: TimeInterval = -1,
-         textColor: UIColor,
+         messageTextColor: UIColor,
+         titleTextColor: UIColor,
          backgroundColor: UIColor,
          image: UIImage = UIImage(),
          isDragable: Bool = false,
@@ -31,9 +35,11 @@ class RONotificationMessageConfiguration: RONotificationConfiguration {
          message: String,
          isToShowLoader: Bool = false) {
         
-        self.font = font
+        self.messageFont = messageFont
+        self.titleFont = titleFont
         self.duration = duration
-        self.textColor = textColor
+        self.titleTextColor = titleTextColor
+        self.messageTextColor = messageTextColor
         self.backgroundColor = backgroundColor
         self.image = image
         self.isDragable = isDragable

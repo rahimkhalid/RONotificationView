@@ -11,21 +11,21 @@ import UIKit
 
 class RONotificationStatusBarBannerConfiguration: RONotificationConfiguration {
     
-    var font: UIFont
     var duration: TimeInterval
-    var textColor: UIColor
+    var messageTextColor: UIColor
     var backgroundColor: UIColor
     var message: String
+    var messageFont: UIFont
     
-    init(font:UIFont = UIFont.systemFont(ofSize: 11),
+    init(messageFont:UIFont = UIFont.systemFont(ofSize: 11),
          duration: TimeInterval = -1,
-         textColor: UIColor,
+         messageTextColor: UIColor,
          backgroundColor: UIColor,
          message: String) {
         
-        self.font = font
+        self.messageFont = messageFont
         self.duration = duration
-        self.textColor = textColor
+        self.messageTextColor = messageTextColor
         self.backgroundColor = backgroundColor
         self.message = message
     }

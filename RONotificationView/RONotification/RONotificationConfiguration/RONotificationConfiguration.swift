@@ -11,9 +11,11 @@ import UIKit
 
 @objc protocol RONotificationConfiguration {
     
-    @objc optional var font: UIFont {get set}
+    @objc optional var messageFont: UIFont {get set}
+    @objc optional var titleFont: UIFont {get set}
     @objc optional var duration: TimeInterval { get set }
-    @objc optional var textColor: UIColor {get set}
+    @objc optional var messageTextColor: UIColor {get set}
+    @objc optional var titleTextColor: UIColor {get set}
     @objc optional var backgroundColor: UIColor {get set}
     @objc optional var image: UIImage {get set}
     @objc optional var isDragable: Bool {get set}
