@@ -24,34 +24,19 @@ class ViewController: UIViewController {
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
         return .slide
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
+
     @IBAction func showBanner(_ sender: Any) {
         if(isNotificationVisible){
             isNotificationVisible = false
             statusBarBanner.hideBanner()
         }else{
-            isNotificationVisible = true
-            let configuration = RONotificationStatusBarBannerConfiguration(messageTextColor: UIColor.white, backgroundColor: UIColor.gray, message: "Testing")
-            
-            statusBarBanner = RONotificationStatusBarBanner(configuration)
+            let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing")
+            if statusBarBanner == nil {
+                statusBarBanner = RONotificationStatusBarBanner(configuration)
+            }
             statusBarBanner.showBanner()
+            isNotificationVisible = true
         }
-        
-        
     }
     
     @IBAction func messageBanner(_ sender: Any) {
@@ -59,10 +44,12 @@ class ViewController: UIViewController {
             isNotificationVisible = false
             messageBanner.hideBanner()
         }else{
-            isNotificationVisible = true
-            let configuration = RONotificationMessageConfiguration(messageTextColor: UIColor.white, titleTextColor: UIColor.white, backgroundColor: UIColor.gray, title: "Message Banner Title", message: "Message Banner Text")
-            messageBanner = RONotificationMessageBanner(configuration)
+            let configuration = RONotificationMessageConfiguration(title: "Message Banner Title", message: "Message Banner Text")
+            if messageBanner == nil {
+                messageBanner = RONotificationMessageBanner(configuration)
+            }
             messageBanner.showBanner()
+            isNotificationVisible = true
         }
         
     }
@@ -70,9 +57,6 @@ class ViewController: UIViewController {
         
         return isNotificationVisible
     }
-    
-    
-    
 }
 
 

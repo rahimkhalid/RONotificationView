@@ -23,29 +23,20 @@ class RONotificationMessageConfiguration: RONotificationConfiguration {
     var message: String
     var isToShowLoader: Bool
     
-    init(messageFont:UIFont = UIFont.systemFont(ofSize: 11),
-         titleFont:UIFont = UIFont.systemFont(ofSize: 11, weight: .bold),
-         duration: TimeInterval = -1,
-         messageTextColor: UIColor,
-         titleTextColor: UIColor,
-         backgroundColor: UIColor,
-         image: UIImage = UIImage(),
-         isDragable: Bool = false,
-         title: String,
-         message: String,
-         isToShowLoader: Bool = false) {
+    init(title: String,
+         message: String) {
         
-        self.messageFont = messageFont
-        self.titleFont = titleFont
-        self.duration = duration
-        self.titleTextColor = titleTextColor
-        self.messageTextColor = messageTextColor
-        self.backgroundColor = backgroundColor
-        self.image = image
-        self.isDragable = isDragable
+        self.messageFont = UIFont.systemFont(ofSize: 11, weight: .regular)
+        self.titleFont = UIFont.systemFont(ofSize: 11, weight: .bold)
+        self.duration = -1
+        self.titleTextColor = UIColor.white
+        self.messageTextColor = UIColor.white
+        self.backgroundColor = UIColor.darkGray
+        self.image = UIImage()
+        self.isDragable = false
         self.title = title
         self.message = message
-        self.isToShowLoader = isToShowLoader
+        self.isToShowLoader = false
         
     }
     

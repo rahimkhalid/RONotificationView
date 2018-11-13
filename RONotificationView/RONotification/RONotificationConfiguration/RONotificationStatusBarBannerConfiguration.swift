@@ -17,16 +17,12 @@ class RONotificationStatusBarBannerConfiguration: RONotificationConfiguration {
     var message: String
     var messageFont: UIFont
     
-    init(messageFont:UIFont = UIFont.systemFont(ofSize: 11),
-         duration: TimeInterval = -1,
-         messageTextColor: UIColor,
-         backgroundColor: UIColor,
-         message: String) {
+    init(message: String) {
         
-        self.messageFont = messageFont
-        self.duration = duration
-        self.messageTextColor = messageTextColor
-        self.backgroundColor = backgroundColor
+        self.messageFont = UIFont.systemFont(ofSize: 11, weight: .bold)
+        self.duration = -1
+        self.messageTextColor = UIColor.white
+        self.backgroundColor = UIColor.darkGray
         self.message = message
     }
     
