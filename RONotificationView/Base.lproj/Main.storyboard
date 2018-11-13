@@ -18,32 +18,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-dK-SKB">
-                                <rect key="frame" x="133" y="485" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-dK-SKB">
+                                <rect key="frame" x="16" y="513" width="163.5" height="30"/>
                                 <state key="normal" title="status bar banner"/>
                                 <connections>
                                     <action selector="showBanner:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="lfv-zn-hmP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-Fx-4nq">
-                                <rect key="frame" x="130" y="523" width="114" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDh-Fx-4nq">
+                                <rect key="frame" x="16" y="559" width="163.5" height="30"/>
                                 <state key="normal" title="message banner"/>
                                 <connections>
                                     <action selector="messageBanner:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="L3r-sB-KTf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPf-F6-xb8">
-                                <rect key="frame" x="140" y="586" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPf-F6-xb8">
+                                <rect key="frame" x="16" y="605" width="343" height="30"/>
                                 <state key="normal" title="switch screen"/>
                                 <connections>
                                     <segue destination="pCF-RB-Loq" kind="show" id="mJd-mJ-U3V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-O6-3Xh">
+                                <rect key="frame" x="195.5" y="513" width="163.5" height="30"/>
+                                <state key="normal" title="custom banner"/>
+                                <connections>
+                                    <action selector="customBanner:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="VYw-Zq-JKf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vm3-pb-6MH">
+                                <rect key="frame" x="195.5" y="559" width="163.5" height="30"/>
+                                <state key="normal" title="progress banner"/>
+                                <connections>
+                                    <action selector="progressBanner:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="uTs-zf-ZjD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kPf-F6-xb8" firstAttribute="leading" secondItem="4Gy-9d-6aR" secondAttribute="leading" constant="16" id="0kY-gr-Ygs"/>
+                            <constraint firstItem="OP6-O6-3Xh" firstAttribute="bottom" secondItem="hdQ-dK-SKB" secondAttribute="bottom" id="8Ci-vW-pcs"/>
+                            <constraint firstItem="Vm3-pb-6MH" firstAttribute="width" secondItem="qDh-Fx-4nq" secondAttribute="width" id="Aj5-hs-Wqb"/>
+                            <constraint firstItem="4Gy-9d-6aR" firstAttribute="trailing" secondItem="kPf-F6-xb8" secondAttribute="trailing" constant="16" id="HlN-gZ-qL1"/>
+                            <constraint firstItem="Vm3-pb-6MH" firstAttribute="leading" secondItem="qDh-Fx-4nq" secondAttribute="trailing" constant="16" id="N0U-Di-74C"/>
+                            <constraint firstItem="hdQ-dK-SKB" firstAttribute="leading" secondItem="4Gy-9d-6aR" secondAttribute="leading" constant="16" id="OMb-GD-i4r"/>
+                            <constraint firstItem="kPf-F6-xb8" firstAttribute="top" secondItem="qDh-Fx-4nq" secondAttribute="bottom" constant="16" id="UGl-Y2-BOr"/>
+                            <constraint firstItem="qDh-Fx-4nq" firstAttribute="top" secondItem="hdQ-dK-SKB" secondAttribute="bottom" constant="16" id="awR-TN-eQZ"/>
+                            <constraint firstItem="OP6-O6-3Xh" firstAttribute="leading" secondItem="hdQ-dK-SKB" secondAttribute="trailing" constant="16" id="eRY-HR-It4"/>
+                            <constraint firstItem="4Gy-9d-6aR" firstAttribute="bottom" secondItem="kPf-F6-xb8" secondAttribute="bottom" constant="32" id="egP-sM-rUJ"/>
+                            <constraint firstItem="4Gy-9d-6aR" firstAttribute="trailing" secondItem="Vm3-pb-6MH" secondAttribute="trailing" constant="16" id="m2p-YA-bhy"/>
+                            <constraint firstItem="OP6-O6-3Xh" firstAttribute="width" secondItem="hdQ-dK-SKB" secondAttribute="width" id="m9i-ct-IaB"/>
+                            <constraint firstItem="OP6-O6-3Xh" firstAttribute="top" secondItem="hdQ-dK-SKB" secondAttribute="top" id="pn7-21-5lg"/>
+                            <constraint firstItem="4Gy-9d-6aR" firstAttribute="trailing" secondItem="OP6-O6-3Xh" secondAttribute="trailing" constant="16" id="qPh-D6-MPg"/>
+                            <constraint firstItem="Vm3-pb-6MH" firstAttribute="top" secondItem="qDh-Fx-4nq" secondAttribute="top" id="tMK-Ks-S7g"/>
+                            <constraint firstItem="Vm3-pb-6MH" firstAttribute="bottom" secondItem="qDh-Fx-4nq" secondAttribute="bottom" id="xz5-aq-9hw"/>
+                            <constraint firstItem="qDh-Fx-4nq" firstAttribute="leading" secondItem="4Gy-9d-6aR" secondAttribute="leading" constant="16" id="yXJ-P4-V5v"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Gy-9d-6aR"/>
                     </view>
                 </viewController>

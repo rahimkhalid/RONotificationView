@@ -31,7 +31,14 @@ class RONotificationMessageBannerView: UIView {
         message.text = config.message
         title.text = config.title
         activityIndicator.isHidden = !(config.isToShowLoader ?? false)
+        if !activityIndicator.isHidden{
+            activityIndicator.startAnimating()
+        }
         dragView.isHidden = !(config.isDragable  ?? false)
         image.image = config.image
+    }
+    
+    override func getHeight() -> CGFloat{
+        return 78
     }
 }

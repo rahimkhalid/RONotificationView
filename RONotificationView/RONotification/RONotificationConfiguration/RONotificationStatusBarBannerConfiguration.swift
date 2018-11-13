@@ -2,7 +2,7 @@
 //  RONotificationStatusBarBannerConfiguration.swift
 //  RONotificationView
 //
-//  Created by vd-rahim on 11/12/18.
+//  Created by rahim on 11/12/18.
 //  Copyright © 2018 RO. All rights reserved.
 //
 

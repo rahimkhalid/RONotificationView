@@ -25,4 +25,9 @@ class RONotificationStatusBarBannerView: UIView {
     private func setupUIFor(Configuration config: RONotificationConfiguration){
         bannerTitle.text = config.message
     }
+    
+    override func getHeight() -> CGFloat{
+        let height = UIApplication.shared.statusBarFrame.height
+        return height == 0 ? 20 : height
+    }
 }

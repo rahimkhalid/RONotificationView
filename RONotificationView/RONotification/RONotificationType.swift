@@ -10,7 +10,6 @@ import Foundation
 
 enum RONotificationType {
     case progress
-    case loading
     case message
     case onStatusBar
     case custom

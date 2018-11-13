@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     var statusBarBanner:RONotificationView!
     var messageBanner:RONotificationView!
+    var customBanner: RONotificationView!
     
     private var isNotificationVisible = false {
         didSet {
@@ -27,8 +28,9 @@ class ViewController: UIViewController {
 
     @IBAction func showBanner(_ sender: Any) {
         if(isNotificationVisible){
-            isNotificationVisible = false
-            statusBarBanner.hideBanner()
+            statusBarBanner.hideBanner(completion: { [weak self] in
+                self?.isNotificationVisible = false
+            })
         }else{
             let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing")
             if statusBarBanner == nil {
@@ -41,8 +43,9 @@ class ViewController: UIViewController {
     
     @IBAction func messageBanner(_ sender: Any) {
         if(isNotificationVisible){
-            isNotificationVisible = false
-            messageBanner.hideBanner()
+            messageBanner.hideBanner(completion: { [weak self] in
+                self?.isNotificationVisible = false
+            })
         }else{
             let configuration = RONotificationMessageConfiguration(title: "Message Banner Title", message: "Message Banner Text")
             if messageBanner == nil {
@@ -51,6 +54,27 @@ class ViewController: UIViewController {
             messageBanner.showBanner()
             isNotificationVisible = true
         }
+        
+    }
+    
+    @IBAction func customBanner(_ sender: UIButton) {
+        
+        if(isNotificationVisible){
+            customBanner.hideBanner(completion: { [weak self] in
+                self?.isNotificationVisible = false
+            })
+        }else{
+            if customBanner == nil {
+                let nib = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)
+                let view = (nib?.first as? UIView)! as! CustomView
+                customBanner = RONotificationCustomBanner(customView: view)
+            }
+            customBanner.showBanner()
+            isNotificationVisible = true
+        }
+    }
+    
+    @IBAction func progressBanner(_ sender: UIButton) {
         
     }
     override var prefersStatusBarHidden: Bool {

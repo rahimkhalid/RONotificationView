@@ -9,14 +9,73 @@
 import Foundation
 import UIKit
 
-//weak var window :UIWindow? = {
-//    return UIApplication.shared.keyWindow!
-//}()
+class RONotificationView {
+    
+    var configuration: RONotificationConfiguration
+    var bannerView: UIView?
+    internal var type:RONotificationType?
+    
+    internal weak var window:UIWindow? = {
+        return UIApplication.shared.keyWindow
+    }()
+    
+    init(config: RONotificationConfiguration) {
+        configuration = config
+    }
+    
+    func setupNotificationForRotation() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleRotation),
+                                               name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                               object: nil)
+    }
+    
+    @objc private func handleRotation() {
+        
+    }
+    
+    func showBanner() {
+        if bannerView == nil{
+            bannerView = RONotificationManager.getNotificationBarConfiguration(for: type!,configuration: self.configuration)
+        }
+        
+        guard let banner = bannerView else {
+            return
+        }
+        
+        banner.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: banner.getHeight())
+        window?.addSubview(banner)
+        
+        UIView.animate(withDuration: 0.3) {[weak self] in
+            guard let weakSelf = self,
+            let banner = weakSelf.bannerView  else {
+                return
+            }
+            banner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: banner.getHeight())
+        }
+    }
+    
+    func hideBanner(completion: @escaping () -> Void) {
 
-
-protocol RONotificationView {
-    var configuration: RONotificationConfiguration {get set}
-    var bannerView: UIView? {get set}
-    func showBanner()
-    func hideBanner()
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.bannerView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+        
+        }){ [weak self] (_) in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.bannerView?.removeFromSuperview()
+            completion()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
