@@ -28,7 +28,7 @@ class RONotificationMessageConfiguration: RONotificationConfiguration {
         
         self.messageFont = UIFont.systemFont(ofSize: 11, weight: .regular)
         self.titleFont = UIFont.systemFont(ofSize: 11, weight: .bold)
-        self.duration = -1
+        self.duration = 0
         self.titleTextColor = UIColor.white
         self.messageTextColor = UIColor.white
         self.backgroundColor = UIColor.darkGray

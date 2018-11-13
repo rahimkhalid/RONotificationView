@@ -53,32 +53,50 @@ class RONotificationView {
         banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
         window?.addSubview(banner)
         
-        UIView.animate(withDuration: 0.3) {[weak self] in
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+            
             guard let weakSelf = self,
-                  let banner = weakSelf.bannerView  else {
-                return
+                let banner = weakSelf.bannerView  else {
+                    return
             }
             banner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: banner.getHeight())
-        }
-    }
-    
-    func hideBanner(completion: @escaping () -> Void) {
-
-        isVisiable = false
-        UIView.animate(withDuration: 0.3, animations: {[weak self] in
-        
-            guard let weakSelf = self,
-                  let banner = weakSelf.bannerView else {
-                return
-            }
-            banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
-        
+            
         }){ [weak self] (_) in
             
             guard let weakSelf = self else {
                 return
             }
+            if !weakSelf.configuration.duration.isLessThanOrEqualTo(0){
+                weakSelf.hideBanner(withDelay: weakSelf.configuration.duration, completion: nil)
+            }
+        }
+        
+    }
+    
+    private func hideBanner(withDelay duration: TimeInterval, completion: (() -> Void)?) {
+        
+        isVisiable = false
+        UIView.animateKeyframes(withDuration: 0.3, delay: duration, animations: {[weak self] in
+            
+            guard let weakSelf = self,
+                let banner = weakSelf.bannerView else {
+                    return
+            }
+            banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
+            
+        }) { [weak self] (_) in
+            
+            guard let weakSelf = self else {
+                return
+            }
             weakSelf.bannerView?.removeFromSuperview()
+            completion?()
+        }
+    }
+    
+    func hideBanner(completion: @escaping () -> Void) {
+
+        hideBanner(withDelay: 0) {
             completion()
         }
     }

@@ -10,5 +10,9 @@ import Foundation
 
 internal class RONotificationCustomViewConfiguration: RONotificationConfiguration {
     
-    init() {}
+    var duration: TimeInterval
+    
+    init(duration:TimeInterval = 0) {
+        self.duration = duration
+    }
 }

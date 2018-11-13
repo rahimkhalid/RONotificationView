@@ -13,7 +13,7 @@ import UIKit
     
     @objc optional var messageFont: UIFont {get set}
     @objc optional var titleFont: UIFont {get set}
-    @objc optional var duration: TimeInterval { get set }
+    var duration: TimeInterval { get set }
     @objc optional var messageTextColor: UIColor {get set}
     @objc optional var titleTextColor: UIColor {get set}
     @objc optional var backgroundColor: UIColor {get set}

@@ -20,7 +20,7 @@ class RONotificationStatusBarBannerConfiguration: RONotificationConfiguration {
     init(message: String) {
         
         self.messageFont = UIFont.systemFont(ofSize: 11, weight: .bold)
-        self.duration = -1
+        self.duration = 0
         self.messageTextColor = UIColor.white
         self.backgroundColor = UIColor.darkGray
         self.message = message

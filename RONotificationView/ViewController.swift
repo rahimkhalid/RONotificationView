@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             })
         }else{
             let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing")
+            configuration.duration = 4
             if statusBarBanner == nil {
                 statusBarBanner = RONotificationStatusBarBanner(configuration)
             }
@@ -67,7 +68,8 @@ class ViewController: UIViewController {
             if customBanner == nil {
                 let nib = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)
                 let view = (nib?.first as? UIView)! as! CustomView
-                customBanner = RONotificationCustomBanner(customView: view)
+                let configuration = RONotificationCustomViewConfiguration(duration: 3)
+                customBanner = RONotificationCustomBanner(configuration: configuration, customView: view)
             }
             customBanner.showBanner()
             isNotificationVisible = true
