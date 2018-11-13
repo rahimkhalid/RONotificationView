@@ -43,12 +43,12 @@ class RONotificationView {
             return
         }
         
-        banner.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: banner.getHeight())
+        banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
         window?.addSubview(banner)
         
         UIView.animate(withDuration: 0.3) {[weak self] in
             guard let weakSelf = self,
-            let banner = weakSelf.bannerView  else {
+                  let banner = weakSelf.bannerView  else {
                 return
             }
             banner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: banner.getHeight())
@@ -59,10 +59,12 @@ class RONotificationView {
 
         UIView.animate(withDuration: 0.3, animations: {[weak self] in
             
-            guard let weakSelf = self else {
+            guard let weakSelf = self,
+                  let banner = weakSelf.bannerView else {
                 return
             }
-            weakSelf.bannerView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0)
+            
+            banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
         
         }){ [weak self] (_) in
             
