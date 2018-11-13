@@ -30,6 +30,7 @@
 		ED1A0A1C219B18C0004CCE54 /* RONotificationCustomViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A1B219B18C0004CCE54 /* RONotificationCustomViewConfiguration.swift */; };
 		ED1A0A1E219B1929004CCE54 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A1D219B1929004CCE54 /* CustomView.xib */; };
 		ED1A0A20219B193A004CCE54 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A1F219B193A004CCE54 /* CustomView.swift */; };
+		ED1A0A24219B253D004CCE54 /* RONotificationCustomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		ED1A0A1B219B18C0004CCE54 /* RONotificationCustomViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationCustomViewConfiguration.swift; sourceTree = "<group>"; };
 		ED1A0A1D219B1929004CCE54 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		ED1A0A1F219B193A004CCE54 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationCustomBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				ED1A0A0921996155004CCE54 /* RONotificationMessageBannerView.xib */,
 				ED1A0A0321995F06004CCE54 /* RONotificationMessageBannnerView.swift */,
 				ED1A0A16219AE1E8004CCE54 /* UIViewExtension.swift */,
+				ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				ED1A0A0D2199A265004CCE54 /* RONotificationStatusBarBannner.swift in Sources */,
 				ED1A0A152199CEC6004CCE54 /* RONotificationMessageConfiguration.swift in Sources */,
 				ED1A09F921995E8E004CCE54 /* RONotificationType.swift in Sources */,
+				ED1A0A24219B253D004CCE54 /* RONotificationCustomBannerView.swift in Sources */,
 				ED1A0A0421995F06004CCE54 /* RONotificationMessageBannnerView.swift in Sources */,
 				ED1A0A132199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift in Sources */,
 				ED1A09E421995DCB004CCE54 /* AppDelegate.swift in Sources */,

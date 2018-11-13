@@ -14,5 +14,6 @@ class RONotificationCustomBanner: RONotificationView{
     init(customView: UIView) {
         super.init(config: RONotificationCustomViewConfiguration())
         self.bannerView = customView
+        (bannerView as! RONotificationCustomBannerView).height = customView.frame.height
     }
 }

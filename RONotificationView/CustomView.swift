@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CustomView: UIView {
+class CustomView: RONotificationCustomBannerView {
 
 }
