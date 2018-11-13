@@ -14,6 +14,7 @@ class RONotificationView {
     var configuration: RONotificationConfiguration
     var bannerView: UIView?
     internal var type:RONotificationType?
+    private var isVisiable = false
     
     internal weak var window:UIWindow? = {
         return UIApplication.shared.keyWindow
@@ -21,6 +22,7 @@ class RONotificationView {
     
     init(config: RONotificationConfiguration) {
         configuration = config
+        setupNotificationForRotation()
     }
     
     func setupNotificationForRotation() {
@@ -31,6 +33,9 @@ class RONotificationView {
     }
     
     @objc private func handleRotation() {
+        if isVisiable{
+            showBanner()
+        }
         
     }
     
@@ -42,6 +47,8 @@ class RONotificationView {
         guard let banner = bannerView else {
             return
         }
+        
+        isVisiable = true
         
         banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
         window?.addSubview(banner)
@@ -57,13 +64,13 @@ class RONotificationView {
     
     func hideBanner(completion: @escaping () -> Void) {
 
+        isVisiable = false
         UIView.animate(withDuration: 0.3, animations: {[weak self] in
-            
+        
             guard let weakSelf = self,
                   let banner = weakSelf.bannerView else {
                 return
             }
-            
             banner.frame = CGRect(x: 0, y: -(banner.getHeight()), width: UIScreen.main.bounds.width, height: banner.getHeight())
         
         }){ [weak self] (_) in
