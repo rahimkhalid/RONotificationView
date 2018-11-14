@@ -31,6 +31,10 @@
 		ED1A0A1E219B1929004CCE54 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1A0A1D219B1929004CCE54 /* CustomView.xib */; };
 		ED1A0A20219B193A004CCE54 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A1F219B193A004CCE54 /* CustomView.swift */; };
 		ED1A0A24219B253D004CCE54 /* RONotificationCustomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */; };
+		ED89D7EF219C20AC005A0A97 /* RONotificationProgressBarBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED89D7EE219C20AC005A0A97 /* RONotificationProgressBarBannerView.xib */; };
+		ED89D7F1219C20BB005A0A97 /* RONotificationProgressBarBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7F0219C20BB005A0A97 /* RONotificationProgressBarBannerView.swift */; };
+		ED89D7F7219C2C77005A0A97 /* RONotificationProgressBarBannerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7F6219C2C77005A0A97 /* RONotificationProgressBarBannerConfiguration.swift */; };
+		ED89D7F9219C353B005A0A97 /* RONotificationProgressBarBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89D7F8219C353B005A0A97 /* RONotificationProgressBarBanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		ED1A0A1D219B1929004CCE54 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		ED1A0A1F219B193A004CCE54 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationCustomBannerView.swift; sourceTree = "<group>"; };
+		ED89D7EE219C20AC005A0A97 /* RONotificationProgressBarBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RONotificationProgressBarBannerView.xib; sourceTree = "<group>"; };
+		ED89D7F0219C20BB005A0A97 /* RONotificationProgressBarBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationProgressBarBannerView.swift; sourceTree = "<group>"; };
+		ED89D7F6219C2C77005A0A97 /* RONotificationProgressBarBannerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationProgressBarBannerConfiguration.swift; sourceTree = "<group>"; };
+		ED89D7F8219C353B005A0A97 /* RONotificationProgressBarBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RONotificationProgressBarBanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 				ED1A0A0C2199A265004CCE54 /* RONotificationStatusBarBannner.swift */,
 				ED1A0A0E2199A2E3004CCE54 /* RONotificationMessageBanner.swift */,
 				ED1A0A19219B1814004CCE54 /* RONotificationCustomBanner.swift */,
+				ED89D7F8219C353B005A0A97 /* RONotificationProgressBarBanner.swift */,
 			);
 			path = RONotification;
 			sourceTree = "<group>";
@@ -130,6 +139,8 @@
 				ED1A0A0321995F06004CCE54 /* RONotificationMessageBannnerView.swift */,
 				ED1A0A16219AE1E8004CCE54 /* UIViewExtension.swift */,
 				ED1A0A23219B253D004CCE54 /* RONotificationCustomBannerView.swift */,
+				ED89D7EE219C20AC005A0A97 /* RONotificationProgressBarBannerView.xib */,
+				ED89D7F0219C20BB005A0A97 /* RONotificationProgressBarBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 				ED1A0A122199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift */,
 				ED1A0A142199CEC6004CCE54 /* RONotificationMessageConfiguration.swift */,
 				ED1A0A1B219B18C0004CCE54 /* RONotificationCustomViewConfiguration.swift */,
+				ED89D7F6219C2C77005A0A97 /* RONotificationProgressBarBannerConfiguration.swift */,
 			);
 			path = RONotificationConfiguration;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 				ED1A0A0A21996155004CCE54 /* RONotificationMessageBannerView.xib in Resources */,
 				ED1A0A1E219B1929004CCE54 /* CustomView.xib in Resources */,
 				ED1A09EE21995DCD004CCE54 /* LaunchScreen.storyboard in Resources */,
+				ED89D7EF219C20AC005A0A97 /* RONotificationProgressBarBannerView.xib in Resources */,
 				ED1A09EB21995DCD004CCE54 /* Assets.xcassets in Resources */,
 				ED1A0A082199614F004CCE54 /* RONotificationStatusBarBannerView.xib in Resources */,
 				ED1A09E921995DCB004CCE54 /* Main.storyboard in Resources */,
@@ -220,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1A0A0621995F35004CCE54 /* RONotificationView.swift in Sources */,
+				ED89D7F9219C353B005A0A97 /* RONotificationProgressBarBanner.swift in Sources */,
 				ED1A0A1A219B1814004CCE54 /* RONotificationCustomBanner.swift in Sources */,
 				ED1A09FD21995EAE004CCE54 /* RONotificationManager.swift in Sources */,
 				ED1A09FF21995EC0004CCE54 /* RONotificationStyle.swift in Sources */,
@@ -228,6 +242,7 @@
 				ED1A0A0D2199A265004CCE54 /* RONotificationStatusBarBannner.swift in Sources */,
 				ED1A0A152199CEC6004CCE54 /* RONotificationMessageConfiguration.swift in Sources */,
 				ED1A09F921995E8E004CCE54 /* RONotificationType.swift in Sources */,
+				ED89D7F7219C2C77005A0A97 /* RONotificationProgressBarBannerConfiguration.swift in Sources */,
 				ED1A0A24219B253D004CCE54 /* RONotificationCustomBannerView.swift in Sources */,
 				ED1A0A0421995F06004CCE54 /* RONotificationMessageBannnerView.swift in Sources */,
 				ED1A0A132199CEB4004CCE54 /* RONotificationStatusBarBannerConfiguration.swift in Sources */,
@@ -237,6 +252,7 @@
 				ED1A0A0F2199A2E3004CCE54 /* RONotificationMessageBanner.swift in Sources */,
 				ED1A0A0221995EF3004CCE54 /* RONotificationStatusBarBannerView.swift in Sources */,
 				ED1A09F721995E80004CCE54 /* RONotificationConfiguration.swift in Sources */,
+				ED89D7F1219C20BB005A0A97 /* RONotificationProgressBarBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HUE5PLNH4;
 				INFOPLIST_FILE = RONotificationView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HUE5PLNH4;
 				INFOPLIST_FILE = RONotificationView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

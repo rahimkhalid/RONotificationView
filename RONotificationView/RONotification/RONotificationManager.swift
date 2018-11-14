@@ -17,6 +17,8 @@ class RONotificationManager {
             return RONotificationMessageBannerView.getViewForConfiguration(config: configuration)
         case .onStatusBar:
             return RONotificationStatusBarBannerView.getViewForConfiguration(config: configuration)
+        case .progress:
+            return RONotificationProgressBarBannerView.getViewForConfiguration(config: configuration)
         default:
             return UIView()
         }

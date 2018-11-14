@@ -13,7 +13,7 @@ import UIKit
     
     @objc optional var messageFont: UIFont {get set}
     @objc optional var titleFont: UIFont {get set}
-    var duration: TimeInterval { get set }
+    @objc optional var duration: TimeInterval { get set }
     @objc optional var messageTextColor: UIColor {get set}
     @objc optional var titleTextColor: UIColor {get set}
     @objc optional var backgroundColor: UIColor {get set}
@@ -22,4 +22,13 @@ import UIKit
     @objc optional var title: String {get set}
     @objc optional var message: String {get set}
     @objc optional var isToShowLoader: Bool {get set}
+    @objc optional var progressBarGradient: CAGradientLayer {get set}
+    @objc optional var progressBarColor: UIColor {get set}
+    @objc optional var isToShowProgressCount: Bool {get set}
+    @objc optional var progressCountFont: UIFont {get set}
+    @objc optional var progressCountColor: UIColor {get set}
+    @objc optional var progressBarStartPosition: Float {get set}
+    @objc optional var progressBarEndPosition: Float {get set}
+    @objc optional var progressBarCurrentPosition: Float {get set}
+//    @objc optional var progressCountPosition: 
 }

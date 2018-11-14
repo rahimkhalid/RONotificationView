@@ -36,7 +36,7 @@
                                 <rect key="frame" x="16" y="605" width="343" height="30"/>
                                 <state key="normal" title="switch screen"/>
                                 <connections>
-                                    <segue destination="pCF-RB-Loq" kind="show" id="mJd-mJ-U3V"/>
+                                    <action selector="switchScreen:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="i8M-8O-a8H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-O6-3Xh">

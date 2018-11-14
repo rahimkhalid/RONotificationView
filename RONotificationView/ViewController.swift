@@ -27,13 +27,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showBanner(_ sender: Any) {
-        if(isNotificationVisible){
+        if(isNotificationVisible && (statusBarBanner != nil) && statusBarBanner.isVisiable){
             statusBarBanner.hideBanner(completion: { [weak self] in
-                self?.isNotificationVisible = false
+                self?.isNotificationVisible = self?.messageBanner?.isVisiable ?? false || self?.customBanner?.isVisiable ?? false
             })
         }else{
             let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing")
-            configuration.duration = 4
             if statusBarBanner == nil {
                 statusBarBanner = RONotificationStatusBarBanner(configuration)
             }
@@ -43,9 +42,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func messageBanner(_ sender: Any) {
-        if(isNotificationVisible){
+        if(isNotificationVisible && (messageBanner != nil) && messageBanner.isVisiable){
             messageBanner.hideBanner(completion: { [weak self] in
-                self?.isNotificationVisible = false
+                self?.isNotificationVisible = self?.customBanner?.isVisiable ?? false || self?.statusBarBanner?.isVisiable ?? false
             })
         }else{
             let configuration = RONotificationMessageConfiguration(title: "Message Banner Title", message: "Message Banner Text")
@@ -60,23 +59,46 @@ class ViewController: UIViewController {
     
     @IBAction func customBanner(_ sender: UIButton) {
         
-        if(isNotificationVisible){
+        if(isNotificationVisible && (customBanner != nil) && customBanner.isVisiable){
             customBanner.hideBanner(completion: { [weak self] in
-                self?.isNotificationVisible = false
+                self?.isNotificationVisible = self?.messageBanner?.isVisiable ?? false || self?.statusBarBanner?.isVisiable ?? false
             })
         }else{
             if customBanner == nil {
                 let nib = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)
                 let view = (nib?.first as? UIView)! as! CustomView
-                let configuration = RONotificationCustomViewConfiguration(duration: 3)
+                let configuration = RONotificationCustomViewConfiguration(duration: 2)
                 customBanner = RONotificationCustomBanner(configuration: configuration, customView: view)
             }
-            customBanner.showBanner()
+            customBanner.showBanner {[weak self] in
+                self?.customBanner.hideBanner(completion: { [weak self] in
+                    self?.isNotificationVisible = self?.messageBanner?.isVisiable ?? false || self?.statusBarBanner?.isVisiable ?? false
+                })
+            }
             isNotificationVisible = true
         }
     }
     
-    @IBAction func progressBanner(_ sender: UIButton) {
+    @IBAction func switchScreen(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    @IBAction func progressBanner(_ seROnder: UIButton) {
+        
+        let progressBarConfiguration = RONotificationProgressBarBannerConfiguration(progressBarColor: UIColor.blue, progressBarStartPosition: 0, progressBarEndPosition: 100)
+        let progressBar = RONotificationProgressBarBanner(progressBarConfiguration)
+        var current:Float = 0
+        
+//        var gl = CAGradientLayer()
+//        gl.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
+//        progressBarConfiguration.progressBarGradient = gl
+        
+        progressBar.showBanner()
+        isNotificationVisible = true
+        progressBar.updateProgressBarTo(position: 50)
+//        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
+//            progressBar.updateProgressBarTo(position: current + 5.3)
+//            current += 5.3
+//        }
         
     }
     override var prefersStatusBarHidden: Bool {
