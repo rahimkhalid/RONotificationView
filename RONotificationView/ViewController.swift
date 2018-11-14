@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var statusBarBanner:RONotificationView!
     var messageBanner:RONotificationView!
     var customBanner: RONotificationView!
+    var progressBar: RONotificationProgressBarBanner!
     
     private var isNotificationVisible = false {
         didSet {
@@ -85,20 +86,15 @@ class ViewController: UIViewController {
     @IBAction func progressBanner(_ seROnder: UIButton) {
         
         let progressBarConfiguration = RONotificationProgressBarBannerConfiguration(progressBarColor: UIColor.blue, progressBarStartPosition: 0, progressBarEndPosition: 100)
-        let progressBar = RONotificationProgressBarBanner(progressBarConfiguration)
+        progressBar = RONotificationProgressBarBanner(progressBarConfiguration)
         var current:Float = 0
-        
-//        var gl = CAGradientLayer()
-//        gl.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
-//        progressBarConfiguration.progressBarGradient = gl
         
         progressBar.showBanner()
         isNotificationVisible = true
-        progressBar.updateProgressBarTo(position: 50)
-//        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
-//            progressBar.updateProgressBarTo(position: current + 5.3)
-//            current += 5.3
-//        }
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self](_) in
+            self?.progressBar.updateProgressBarTo(position: current + 5.3)
+            current += 5.3
+        }
         
     }
     override var prefersStatusBarHidden: Bool {

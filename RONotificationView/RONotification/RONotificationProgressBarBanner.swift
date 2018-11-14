@@ -16,6 +16,7 @@ class RONotificationProgressBarBanner: RONotificationView{
     }
     
     func updateProgressBarTo(position: Float){
+        (configuration as! RONotificationProgressBarBannerConfiguration).setCurrentProgress(progress: position)
         (bannerView as! RONotificationProgressBarBannerView).animateProgressBarTo(position: position > 100 ? 100 : position, final: configuration.progressBarEndPosition!)
     }
 }

@@ -34,11 +34,11 @@ class RONotificationView {
     }
     
     @objc private func handleRotation() {
-        print("testing")
         if isVisiable{
             
             if let banner = bannerView{
                 setupFrames(for: banner , y: 0, height: banner.getHeight())
+                banner.superview?.layoutIfNeeded()
             }
             
         }

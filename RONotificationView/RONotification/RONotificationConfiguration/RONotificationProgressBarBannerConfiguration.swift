@@ -35,4 +35,8 @@ class RONotificationProgressBarBannerConfiguration: RONotificationConfiguration 
         self.progressBarCurrentPosition = progressBarStartPosition
         self.progressBarEndPosition = progressBarEndPosition
     }
+    
+    func setCurrentProgress(progress:Float){
+        self.progressBarCurrentPosition = progress
+    }
 }
