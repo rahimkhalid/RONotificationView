@@ -85,11 +85,14 @@ class ViewController: UIViewController {
     }
     @IBAction func progressBanner(_ seROnder: UIButton) {
         
-        let progressBarConfiguration = RONotificationProgressBarBannerConfiguration(progressBarColor: UIColor.blue, progressBarStartPosition: 0, progressBarEndPosition: 100)
+        let bgColor = UIColor(red: 0.8, green: 0.1, blue: 0.3, alpha: 1.0)
+        let progressBarConfiguration = RONotificationProgressBarBannerConfiguration(progressBarColor: bgColor, progressBarStartPosition: 0, progressBarEndPosition: 100)
         progressBar = RONotificationProgressBarBanner(progressBarConfiguration)
         var current:Float = 0
-        
+        progressBarConfiguration.isToShowProgressCount = false
+        progressBarConfiguration.isToAnimateProgressBarGradient = true
         progressBar.showBanner()
+        
         isNotificationVisible = true
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self](_) in
             self?.progressBar.updateProgressBarTo(position: current + 5.3)

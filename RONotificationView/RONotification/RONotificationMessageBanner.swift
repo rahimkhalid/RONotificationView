@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationMessageBanner: RONotificationView{
+open class RONotificationMessageBanner: RONotificationView{
 
     init(_ config: RONotificationMessageConfiguration) {
         super.init(config: config)

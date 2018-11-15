@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationCustomBanner: RONotificationView{
+open class RONotificationCustomBanner: RONotificationView{
     
     init(configuration: RONotificationCustomViewConfiguration, customView: UIView) {
         super.init(config: configuration)

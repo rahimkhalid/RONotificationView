@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationManager {
+internal class RONotificationManager {
     
     static func getNotificationBarConfiguration(for type:RONotificationType, configuration:RONotificationConfiguration) -> UIView{
         switch type {

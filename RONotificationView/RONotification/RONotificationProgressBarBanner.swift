@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RONotificationProgressBarBanner: RONotificationView{
+open class RONotificationProgressBarBanner: RONotificationView{
     
     init(_ config: RONotificationProgressBarBannerConfiguration) {
         super.init(config: config)

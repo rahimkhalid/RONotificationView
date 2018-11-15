@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationStatusBarBanner: RONotificationView{
+open class RONotificationStatusBarBanner: RONotificationView{
     
     private var statusBarHeight:CGFloat = {
         return UIApplication.shared.statusBarFrame.size.height

@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-tq-L1h">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="11"/>
+                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="11"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uy-zs-5ZV">
-                            <rect key="frame" x="189" y="1" width="11" height="9"/>
+                            <rect key="frame" x="-11" y="1" width="11" height="9"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="7"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                     <constraints>
                         <constraint firstItem="3Uy-zs-5ZV" firstAttribute="centerY" secondItem="nCs-tq-L1h" secondAttribute="centerY" id="11X-qm-jlB"/>
                         <constraint firstAttribute="trailing" secondItem="3Uy-zs-5ZV" secondAttribute="trailing" id="VUh-w5-QvT"/>
-                        <constraint firstAttribute="width" constant="200" id="v24-lq-huF"/>
+                        <constraint firstAttribute="width" id="v24-lq-huF"/>
                     </constraints>
                 </view>
             </subviews>

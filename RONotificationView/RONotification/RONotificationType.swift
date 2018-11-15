@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RONotificationType {
+internal enum RONotificationType {
     case progress
     case message
     case onStatusBar

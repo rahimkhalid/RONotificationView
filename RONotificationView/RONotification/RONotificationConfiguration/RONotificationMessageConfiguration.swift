@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RONotificationMessageConfiguration: RONotificationConfiguration {
+open class RONotificationMessageConfiguration: RONotificationConfiguration {
     
     var messageFont: UIFont
     var titleFont: UIFont

@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class RONotificationStatusBarBannerView: UIView {
+internal class RONotificationStatusBarBannerView: UIView {
     
-    @IBOutlet weak var bannerTitle: UILabel!
+    @IBOutlet private weak var bannerTitle: UILabel!
     
     static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
         

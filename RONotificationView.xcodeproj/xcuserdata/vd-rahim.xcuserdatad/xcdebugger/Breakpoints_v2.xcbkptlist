@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RONotificationView/RONotification/RONotificationView.swift"
-            timestampString = "563908342.41939"
+            timestampString = "563959482.771018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "handleRotation()"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "deinit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RONotificationView/RONotification/RONotificationView.swift"
-            timestampString = "563908342.420006"
+            filePath = "RONotificationView/RONotification/Views/RONotificationProgressBarBannerView.swift"
+            timestampString = "563970537.7503181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "init(config:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "animateProgressBarTo(position:final:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RONotificationView/RONotification/RONotificationView.swift"
-            timestampString = "563908342.420234"
+            filePath = "RONotificationView/RONotification/Views/RONotificationProgressBarBannerView.swift"
+            timestampString = "563970537.7504081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "setupNotificationForRotation()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setupUIFor(Configuration:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class RONotificationMessageBannerView: UIView {
+internal class RONotificationMessageBannerView: UIView {
     
-    @IBOutlet weak var dragView: UIView!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var dragView: UIView!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var message: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
         
