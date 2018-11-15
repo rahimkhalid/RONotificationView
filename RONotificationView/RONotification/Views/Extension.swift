@@ -11,7 +11,7 @@ import UIKit
 
 internal extension UIView{
     
-    @objc func getHeight() -> CGFloat{
+    @objc internal func getHeight() -> CGFloat{
         return self.frame.height
     }
 }
@@ -22,7 +22,7 @@ internal extension UIColor {
         return lighterColor(removeSaturation: 0.2, resultAlpha: -1)
     }
     
-    func lighterColor(removeSaturation val: CGFloat, resultAlpha alpha: CGFloat) -> UIColor {
+    internal func lighterColor(removeSaturation val: CGFloat, resultAlpha alpha: CGFloat) -> UIColor {
         var h: CGFloat = 0, s: CGFloat = 0
         var b: CGFloat = 0, a: CGFloat = 0
         

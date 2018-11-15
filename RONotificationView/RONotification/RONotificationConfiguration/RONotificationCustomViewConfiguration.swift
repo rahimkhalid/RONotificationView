@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class RONotificationCustomViewConfiguration: RONotificationConfiguration {
+public class RONotificationCustomViewConfiguration: RONotificationConfiguration {
     
-    var duration: TimeInterval
+    public var duration: TimeInterval
     
     init(duration:TimeInterval = 0) {
         self.duration = duration

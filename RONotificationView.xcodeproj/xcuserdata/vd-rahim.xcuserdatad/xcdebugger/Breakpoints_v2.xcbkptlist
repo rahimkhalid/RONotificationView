@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RONotificationView/RONotification/RONotificationView.swift"
-            timestampString = "563959482.771018"
+            timestampString = "563995970.684893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RONotificationView/RONotification/Views/RONotificationProgressBarBannerView.swift"
-            timestampString = "563970537.7503181"
+            timestampString = "563995970.684991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "animateProgressBarTo(position:final:)"
+            landmarkName = "createGradient(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RONotificationView/RONotification/Views/RONotificationProgressBarBannerView.swift"
-            timestampString = "563970537.7504081"
+            timestampString = "563995970.6850539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "setupUIFor(Configuration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RONotificationView/RONotification/Views/RONotificationStatusBarBannerView.swift"
+            timestampString = "563995970.685146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getViewForConfiguration(config:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

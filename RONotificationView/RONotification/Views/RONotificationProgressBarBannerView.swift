@@ -14,26 +14,32 @@ internal class RONotificationProgressBarBannerView: UIView {
     @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var progressCountLabel: UILabel!
     
-    override func getHeight() -> CGFloat {
+    internal override func getHeight() -> CGFloat {
         return progressCountLabel.isHidden ? 7 : 15
     }
     
-    static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
+    internal static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
         
-        let nib = Bundle.main.loadNibNamed("RONotificationProgressBarBannerView", owner: self, options: nil)
-        let view = (nib?.first as? UIView)! as! RONotificationProgressBarBannerView
-        view.setupUIFor(Configuration: config)
+        if let nib = Bundle.main.loadNibNamed(String(describing: self) , owner: self, options: nil)?.first as? UIView,
+            let view = nib as? RONotificationProgressBarBannerView {
+            
+            view.setupUIFor(Configuration: config)
+            return view
+        }
         
-        return view
+        return UIView()
     }
     
     private func setupUIFor(Configuration config: RONotificationConfiguration){
         
         progressViewWidth.constant = CGFloat(config.progressBarCurrentPosition ?? 0)
-        if config.isToAnimateProgressBarGradient!{
-            setupGradient(for: config.progressBarColor!)
-        }else{
+        
+        if let animateProgressBarGradient = config.isToAnimateProgressBarGradient,
+            let color = config.progressBarColor{
             progressView.backgroundColor = config.progressBarColor
+            if animateProgressBarGradient{
+                setupGradient(for: color)
+            }
         }
         
         progressCountLabel.isHidden = !(config.isToShowProgressCount ?? true)
@@ -80,12 +86,15 @@ internal class RONotificationProgressBarBannerView: UIView {
         return gradient
     }
     
-    func animateProgressBarTo(position: Float, final:Float){
+    internal func animateProgressBarTo(position: Float, final:Float){
         self.progressViewWidth.constant = CGFloat(position/final) * self.frame.width
         progressCountLabel.text = "\(position)%"
         UIView.animate(withDuration: 0.3) {[weak self] in
-            self?.progressView.superview?.layoutIfNeeded()
-            self?.progressView.layer.sublayers?.first?.frame = (self?.progressView.frame)!
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.progressView.superview?.layoutIfNeeded()
+            weakSelf.progressView.layer.sublayers?.first?.frame = weakSelf.progressView.frame
             
         }
         

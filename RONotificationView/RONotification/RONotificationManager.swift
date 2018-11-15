@@ -11,7 +11,7 @@ import UIKit
 
 internal class RONotificationManager {
     
-    static func getNotificationBarConfiguration(for type:RONotificationType, configuration:RONotificationConfiguration) -> UIView{
+    internal static func getNotificationBarConfiguration(for type:RONotificationType, configuration:RONotificationConfiguration) -> UIView{
         switch type {
         case .message:
             return RONotificationMessageBannerView.getViewForConfiguration(config: configuration)

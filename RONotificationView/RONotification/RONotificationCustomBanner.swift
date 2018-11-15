@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-open class RONotificationCustomBanner: RONotificationView{
+public class RONotificationCustomBanner: RONotificationView{
     
     init(configuration: RONotificationCustomViewConfiguration, customView: UIView) {
         super.init(config: configuration)
         self.bannerView = customView
-        (bannerView as! RONotificationCustomBannerView).height = customView.frame.height
+        
+        if let banner = bannerView as? RONotificationCustomBannerView{
+            banner.height = customView.frame.height
+        }
     }
 }

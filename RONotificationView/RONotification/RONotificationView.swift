@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class RONotificationView {
+public class RONotificationView {
     
     internal var configuration: RONotificationConfiguration
     internal var bannerView: UIView?
@@ -21,12 +21,12 @@ open class RONotificationView {
         return UIApplication.shared.keyWindow
     }()
     
-    init(config: RONotificationConfiguration) {
+    public init(config: RONotificationConfiguration) {
         configuration = config
         setupNotificationForRotation()
     }
     
-    func setupNotificationForRotation() {
+    private func setupNotificationForRotation() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleRotation),
                                                name: NSNotification.Name.UIDeviceOrientationDidChange,
@@ -47,17 +47,24 @@ open class RONotificationView {
     private func setupFrames(for banner:UIView, y:CGFloat,height:CGFloat){
         banner.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: height)
         if type == RONotificationType.progress{
-            (self as! RONotificationProgressBarBanner).updateProgressBarTo(position: configuration.progressBarCurrentPosition ?? 0 )
+            if let progressBanner = self as? RONotificationProgressBarBanner{
+                
+                let position = configuration.progressBarCurrentPosition ?? 0
+                progressBanner.updateProgressBarTo(position: position)
+            }
         }
     }
     
-    open func showBanner(onDismiss: (() -> ())? = nil) {
+    public func showBanner(onDismiss: (() -> ())? = nil) {
         
         self.onDismiss = onDismiss
         
         if bannerView == nil{
-            bannerView = RONotificationManager.getNotificationBarConfiguration(for: type!,configuration: self.configuration)
+            if let t = type {
+                bannerView = RONotificationManager.getNotificationBarConfiguration(for: t,configuration: self.configuration)
+            }
         }
+        
         isVisiable = true
         
         guard let banner = bannerView else { return }
@@ -78,7 +85,7 @@ open class RONotificationView {
         }
     }
     
-    internal func hideBannerAfter(_ time:TimeInterval){
+    private func hideBannerAfter(_ time:TimeInterval){
         if !time.isLessThanOrEqualTo(0){
             DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {[weak self] in
                 self?.hideBanner(completion: {
@@ -88,7 +95,7 @@ open class RONotificationView {
         }
     }
     
-    open func hideBanner(completion: @escaping () -> Void) {
+    public func hideBanner(completion: @escaping () -> Void) {
 
         UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let weakSelf = self,

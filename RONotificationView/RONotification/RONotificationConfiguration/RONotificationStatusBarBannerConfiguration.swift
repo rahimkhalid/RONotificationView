@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-open class RONotificationStatusBarBannerConfiguration: RONotificationConfiguration {
+public class RONotificationStatusBarBannerConfiguration: RONotificationConfiguration {
     
-    var duration: TimeInterval
-    var messageTextColor: UIColor
-    var backgroundColor: UIColor
-    var message: String
-    var messageFont: UIFont
+    public var duration: TimeInterval
+    public var messageTextColor: UIColor
+    public var backgroundColor: UIColor
+    public var message: String
+    public var messageFont: UIFont
     
     init(message: String) {
         

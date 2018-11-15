@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc protocol RONotificationConfiguration {
+@objc public protocol RONotificationConfiguration {
     
     @objc optional var messageFont: UIFont {get set}
     @objc optional var titleFont: UIFont {get set}

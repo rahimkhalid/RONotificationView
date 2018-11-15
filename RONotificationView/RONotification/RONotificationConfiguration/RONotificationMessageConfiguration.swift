@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-open class RONotificationMessageConfiguration: RONotificationConfiguration {
+public class RONotificationMessageConfiguration: RONotificationConfiguration {
     
-    var messageFont: UIFont
-    var titleFont: UIFont
-    var duration: TimeInterval
-    var titleTextColor: UIColor
-    var messageTextColor: UIColor
-    var backgroundColor: UIColor
-    var image: UIImage
-    var isDragable: Bool
-    var title: String
-    var message: String
-    var isToShowLoader: Bool
+    public var messageFont: UIFont
+    public var titleFont: UIFont
+    public var duration: TimeInterval
+    public var titleTextColor: UIColor
+    public var messageTextColor: UIColor
+    public var backgroundColor: UIColor
+    public var image: UIImage
+    public var isDragable: Bool
+    public var title: String
+    public var message: String
+    public var isToShowLoader: Bool
     
     init(title: String,
          message: String) {

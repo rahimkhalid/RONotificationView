@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class RONotificationCustomBannerView: UIView {
+open class RONotificationCustomBannerView: UIView {
     
     internal var height:CGFloat = 0;
     
-    override func getHeight() -> CGFloat {
+    internal override func getHeight() -> CGFloat {
         return height
     }
 }

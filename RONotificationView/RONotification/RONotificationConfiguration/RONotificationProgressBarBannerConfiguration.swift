@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-open class RONotificationProgressBarBannerConfiguration: RONotificationConfiguration {
+public class RONotificationProgressBarBannerConfiguration: RONotificationConfiguration {
     
-    var backgroundColor: UIColor
-    var isToShowProgressCount: Bool
-    var progressBarColor: UIColor
-    var progressCountFont: UIFont
-    var progressCountColor: UIColor
-    var progressBarStartPosition: Float
-    var progressBarCurrentPosition: Float
-    var progressBarEndPosition: Float
-    var isToAnimateProgressBarGradient: Bool
+    public var backgroundColor: UIColor
+    public var isToShowProgressCount: Bool
+    public var progressBarColor: UIColor
+    public var progressCountFont: UIFont
+    public var progressCountColor: UIColor
+    public var progressBarStartPosition: Float
+    public var progressBarCurrentPosition: Float
+    public var progressBarEndPosition: Float
+    public var isToAnimateProgressBarGradient: Bool
     
     init(progressBarColor:UIColor,
          progressBarStartPosition:Float,
@@ -36,7 +36,7 @@ open class RONotificationProgressBarBannerConfiguration: RONotificationConfigura
         self.isToAnimateProgressBarGradient = false
     }
     
-    func setCurrentProgress(progress:Float){
+    internal func setCurrentProgress(progress:Float){
         self.progressBarCurrentPosition = progress
     }
 }
