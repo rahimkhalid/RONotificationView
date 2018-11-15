@@ -2,7 +2,7 @@
 //  RONotificationCustomBannerView.swift
 //  RONotificationView
 //
-//  Created by vd-rahim on 11/13/18.
+//  Created by rahim on 11/13/18.
 //  Copyright © 2018 RO. All rights reserved.
 //
 
