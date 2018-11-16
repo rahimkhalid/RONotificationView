@@ -23,7 +23,11 @@ public class RONotificationProgressBarBanner: RONotificationView{
             config.setCurrentProgress(progress: position)
             let current = position > 100 ? 100 : position
             
-            banner.animateProgressBarTo(position: current, final: config.progressBarEndPosition)
+            banner.animateProgressBarTo(position: current, final: config.progressBarEndPosition, completion: { [weak self](pos) in
+                if pos == config.progressBarEndPosition{
+                    self?.onDismiss?()
+                }
+            })
             
         }
     }

@@ -123,7 +123,7 @@ public class RONotificationView {
         }
     }
     
-    public func hideBanner(completion: @escaping () -> Void) {
+    public func hideBanner(completion: (() -> ())? = nil) {
 
         isVisiable = false
         
@@ -140,7 +140,7 @@ public class RONotificationView {
             
             weakSelf.bannerView?.removeFromSuperview()
             weakSelf.bannerView = nil
-            completion()
+            completion?()
         }
     }
     

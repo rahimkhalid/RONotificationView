@@ -86,16 +86,20 @@ internal class RONotificationProgressBarBannerView: UIView {
         return gradient
     }
     
-    internal func animateProgressBarTo(position: Float, final:Float){
+    internal func animateProgressBarTo(position: Float, final:Float, completion:@escaping (Float)->Void){
         self.progressViewWidth.constant = CGFloat(position/final) * self.frame.width
         progressCountLabel.text = "\(position)%"
-        UIView.animate(withDuration: 0.3) {[weak self] in
+        
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let weakSelf = self else {
                 return
             }
             weakSelf.progressView.superview?.layoutIfNeeded()
             weakSelf.progressView.layer.sublayers?.first?.frame = weakSelf.progressView.frame
             
+            
+        }) { (_) in
+            completion(position)
         }
         
     }
