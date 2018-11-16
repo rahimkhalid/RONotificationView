@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWj-rY-LqY">
-                    <rect key="frame" x="8" y="3.5" width="359" height="13.5"/>
+                    <rect key="frame" x="8" y="2.5" width="359" height="13.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -25,7 +25,7 @@
             </subviews>
             <color key="backgroundColor" red="0.52965456249999998" green="0.53711283210000005" blue="0.54509609940000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="tWj-rY-LqY" firstAttribute="centerY" secondItem="KC8-lX-CqH" secondAttribute="centerY" id="EMQ-nx-VFZ"/>
+                <constraint firstItem="oIA-yg-gxo" firstAttribute="bottom" secondItem="tWj-rY-LqY" secondAttribute="bottom" constant="4" id="0t2-3O-nv7"/>
                 <constraint firstItem="oIA-yg-gxo" firstAttribute="trailing" secondItem="tWj-rY-LqY" secondAttribute="trailing" constant="8" id="HHC-qL-lKu"/>
                 <constraint firstItem="tWj-rY-LqY" firstAttribute="leading" secondItem="oIA-yg-gxo" secondAttribute="leading" constant="8" id="y8p-VE-Ih6"/>
             </constraints>

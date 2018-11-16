@@ -83,21 +83,26 @@ class ViewController: UIViewController {
     @IBAction func switchScreen(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
     @IBAction func progressBanner(_ seROnder: UIButton) {
         
         let bgColor = UIColor(red: 0.8, green: 0.1, blue: 0.3, alpha: 1.0)
         let progressBarConfiguration = RONotificationProgressBarBannerConfiguration(progressBarColor: bgColor, progressBarStartPosition: 0, progressBarEndPosition: 100)
         progressBar = RONotificationProgressBarBanner(progressBarConfiguration)
         var current:Float = 0
-        progressBarConfiguration.isToShowProgressCount = false
+        progressBarConfiguration.isToShowProgressCount = true
         progressBarConfiguration.isToAnimateProgressBarGradient = true
-        progressBar.showBanner()
+        
+        progressBar.showBanner ()
         
         isNotificationVisible = true
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self](_) in
-            self?.progressBar.updateProgressBarTo(position: current + 5.3)
-            current += 5.3
-        }
+        
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self](_) in
+                self?.progressBar.updateProgressBarTo(position: current + 5)
+                current += 5.3
+            }
+        
+        
         
     }
     override var prefersStatusBarHidden: Bool {

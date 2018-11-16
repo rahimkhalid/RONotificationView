@@ -44,10 +44,11 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-tv-T82">
                     <rect key="frame" x="339" y="29" width="20" height="20"/>
                 </activityIndicatorView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmz-lf-ZKV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmz-lf-ZKV">
                     <rect key="frame" x="175" y="67" width="25" height="5"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="5" id="CF8-8L-k2h"/>
                         <constraint firstAttribute="width" constant="25" id="PzQ-W0-Cgd"/>
                     </constraints>
                 </view>
@@ -58,9 +59,9 @@
                 <constraint firstItem="Mmz-lf-ZKV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1b2-iB-x52"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Mmz-lf-ZKV" secondAttribute="bottom" constant="6" id="3en-NB-Ac5"/>
                 <constraint firstItem="dD4-tv-T82" firstAttribute="leading" secondItem="8Qi-Uw-Alp" secondAttribute="trailing" constant="8" id="Gi5-lf-iLi"/>
-                <constraint firstItem="h9M-Rr-b9d" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KMP-RY-VX2"/>
                 <constraint firstItem="dSJ-Ch-rDN" firstAttribute="top" secondItem="8Qi-Uw-Alp" secondAttribute="bottom" constant="8" id="OhS-zB-aCQ"/>
                 <constraint firstItem="h9M-Rr-b9d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="bbo-gO-ld5"/>
+                <constraint firstItem="Mmz-lf-ZKV" firstAttribute="top" secondItem="dSJ-Ch-rDN" secondAttribute="bottom" constant="8" id="bhf-2j-C25"/>
                 <constraint firstItem="dD4-tv-T82" firstAttribute="centerY" secondItem="h9M-Rr-b9d" secondAttribute="centerY" id="jOX-mf-EX6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dD4-tv-T82" secondAttribute="trailing" constant="16" id="o3s-yx-cCk"/>
                 <constraint firstItem="dD4-tv-T82" firstAttribute="leading" secondItem="dSJ-Ch-rDN" secondAttribute="trailing" constant="8" id="oOT-qP-rGg"/>

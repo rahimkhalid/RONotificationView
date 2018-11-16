@@ -57,7 +57,7 @@ internal class RONotificationProgressBarBannerView: UIView {
         let animation = createAnimation()
         // add the animation to the gradient
         gradient.add(animation, forKey: "gradientAnimation")
-        gradient.frame = progressView.bounds
+        gradient.frame = progressView.frame
         progressView.layer.insertSublayer(gradient, at: 0)
     }
     
