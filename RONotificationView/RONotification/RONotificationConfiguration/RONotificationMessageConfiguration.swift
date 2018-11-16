@@ -11,6 +11,7 @@ import UIKit
 
 public class RONotificationMessageConfiguration: RONotificationConfiguration {
     
+    public var isToAnimateView: Bool
     public var messageFont: UIFont
     public var titleFont: UIFont
     public var duration: TimeInterval
@@ -24,7 +25,8 @@ public class RONotificationMessageConfiguration: RONotificationConfiguration {
     public var isToShowLoader: Bool
     
     init(title: String,
-         message: String) {
+         message: String,
+         isToAnimateView: Bool = false) {
         
         self.messageFont = UIFont.systemFont(ofSize: 11, weight: .regular)
         self.titleFont = UIFont.systemFont(ofSize: 11, weight: .bold)
@@ -37,6 +39,7 @@ public class RONotificationMessageConfiguration: RONotificationConfiguration {
         self.title = title
         self.message = message
         self.isToShowLoader = false
+        self.isToAnimateView = isToAnimateView
         
     }
     

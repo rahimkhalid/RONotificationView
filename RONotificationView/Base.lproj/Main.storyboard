@@ -53,16 +53,26 @@
                                     <action selector="progressBanner:" destination="Uyy-oE-NuU" eventType="touchUpInside" id="uTs-zf-ZjD"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4N-CY-pOO">
+                                <rect key="frame" x="0.0" y="235" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Psw-7m-gKO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kPf-F6-xb8" firstAttribute="leading" secondItem="4Gy-9d-6aR" secondAttribute="leading" constant="16" id="0kY-gr-Ygs"/>
+                            <constraint firstItem="U4N-CY-pOO" firstAttribute="leading" secondItem="dsS-2c-jwr" secondAttribute="leading" id="3nS-I3-PGx"/>
                             <constraint firstItem="OP6-O6-3Xh" firstAttribute="bottom" secondItem="hdQ-dK-SKB" secondAttribute="bottom" id="8Ci-vW-pcs"/>
                             <constraint firstItem="Vm3-pb-6MH" firstAttribute="width" secondItem="qDh-Fx-4nq" secondAttribute="width" id="Aj5-hs-Wqb"/>
                             <constraint firstItem="4Gy-9d-6aR" firstAttribute="trailing" secondItem="kPf-F6-xb8" secondAttribute="trailing" constant="16" id="HlN-gZ-qL1"/>
                             <constraint firstItem="Vm3-pb-6MH" firstAttribute="leading" secondItem="qDh-Fx-4nq" secondAttribute="trailing" constant="16" id="N0U-Di-74C"/>
                             <constraint firstItem="hdQ-dK-SKB" firstAttribute="leading" secondItem="4Gy-9d-6aR" secondAttribute="leading" constant="16" id="OMb-GD-i4r"/>
                             <constraint firstItem="kPf-F6-xb8" firstAttribute="top" secondItem="qDh-Fx-4nq" secondAttribute="bottom" constant="16" id="UGl-Y2-BOr"/>
+                            <constraint firstItem="hdQ-dK-SKB" firstAttribute="top" secondItem="U4N-CY-pOO" secondAttribute="bottom" constant="150" id="W6X-XR-rQq"/>
+                            <constraint firstAttribute="trailing" secondItem="U4N-CY-pOO" secondAttribute="trailing" id="YPS-uH-4LF"/>
                             <constraint firstItem="qDh-Fx-4nq" firstAttribute="top" secondItem="hdQ-dK-SKB" secondAttribute="bottom" constant="16" id="awR-TN-eQZ"/>
                             <constraint firstItem="OP6-O6-3Xh" firstAttribute="leading" secondItem="hdQ-dK-SKB" secondAttribute="trailing" constant="16" id="eRY-HR-It4"/>
                             <constraint firstItem="4Gy-9d-6aR" firstAttribute="bottom" secondItem="kPf-F6-xb8" secondAttribute="bottom" constant="32" id="egP-sM-rUJ"/>
@@ -76,10 +86,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Gy-9d-6aR"/>
                     </view>
+                    <connections>
+                        <outlet property="testView" destination="U4N-CY-pOO" id="CNL-Rh-PMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbp-mr-REK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="72"/>
+            <point key="canvasLocation" x="149.59999999999999" y="71.514242878560722"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bL8-3A-Unv">

@@ -11,8 +11,18 @@ import UIKit
 
 public class RONotificationStatusBarBanner: RONotificationView{
 
-    init(_ config: RONotificationStatusBarBannerConfiguration) {
+    public init(_ config: RONotificationStatusBarBannerConfiguration) {
         super.init(config: config)
+        self.type = RONotificationType.onStatusBar
+    }
+    
+    public init(presentOn view: UIView, config: RONotificationStatusBarBannerConfiguration) {
+        super.init(presentOn: view, config: config)
+        self.type = RONotificationType.onStatusBar
+    }
+    
+    public init(presentOn controller: UIViewController, config: RONotificationStatusBarBannerConfiguration) {
+        super.init(presentOn: controller.view, config: config)
         self.type = RONotificationType.onStatusBar
     }
 }

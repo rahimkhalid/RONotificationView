@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var customBanner: RONotificationView!
     var progressBar: RONotificationProgressBarBanner!
     
+    @IBOutlet weak var testView: UIView!
     private var isNotificationVisible = false {
         didSet {
             UIView.animate(withDuration: 0.3) {
@@ -30,16 +31,17 @@ class ViewController: UIViewController {
     @IBAction func showBanner(_ sender: Any) {
         if(isNotificationVisible && (statusBarBanner != nil) && statusBarBanner.isVisiable){
             statusBarBanner.hideBanner(completion: { [weak self] in
-                self?.isNotificationVisible = self?.messageBanner?.isVisiable ?? false || self?.customBanner?.isVisiable ?? false
+                self?.isNotificationVisible = false
             })
         }else{
-            let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing")
+            let configuration = RONotificationStatusBarBannerConfiguration(message: "Testing", isToAnimateView: false)
             if statusBarBanner == nil {
-                statusBarBanner = RONotificationStatusBarBanner(configuration)
+                statusBarBanner = RONotificationStatusBarBanner(presentOn: testView, config: configuration)
             }
             statusBarBanner.showBanner()
             isNotificationVisible = true
         }
+        
     }
     
     @IBAction func messageBanner(_ sender: Any) {
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
             if customBanner == nil {
                 let nib = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)
                 let view = (nib?.first as? UIView)! as! CustomView
-                let configuration = RONotificationCustomViewConfiguration(duration: 2)
+                let configuration = RONotificationCustomViewConfiguration(duration: 6)
                 customBanner = RONotificationCustomBanner(configuration: configuration, customView: view)
             }
             customBanner.showBanner {[weak self] in

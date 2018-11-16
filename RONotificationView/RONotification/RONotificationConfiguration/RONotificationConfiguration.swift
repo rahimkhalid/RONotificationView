@@ -11,6 +11,7 @@ import UIKit
 
 @objc public protocol RONotificationConfiguration {
     
+    @objc var isToAnimateView: Bool {get set}
     @objc optional var messageFont: UIFont {get set}
     @objc optional var titleFont: UIFont {get set}
     @objc optional var duration: TimeInterval { get set }

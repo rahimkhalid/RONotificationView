@@ -11,9 +11,32 @@ import UIKit
 
 public class RONotificationCustomBanner: RONotificationView{
     
-    init(configuration: RONotificationCustomViewConfiguration, customView: UIView) {
+    public init(configuration: RONotificationCustomViewConfiguration, customView: UIView) {
+        
         super.init(config: configuration)
         self.bannerView = customView
+        self.type = RONotificationType.custom
+        if let banner = bannerView as? RONotificationCustomBannerView{
+            banner.height = customView.frame.height
+        }
+    }
+    
+    public init(presentOn view: UIView, config: RONotificationCustomViewConfiguration, customView: UIView) {
+        
+        super.init(presentOn: view, config: config)
+        self.bannerView = customView
+        self.type = RONotificationType.custom
+        
+        if let banner = bannerView as? RONotificationCustomBannerView{
+            banner.height = customView.frame.height
+        }
+    }
+    
+    public init(presentOn controller: UIViewController, config: RONotificationCustomViewConfiguration, customView: UIView) {
+        
+        super.init(presentOn: controller.view, config: config)
+        self.bannerView = customView
+        self.type = RONotificationType.custom
         
         if let banner = bannerView as? RONotificationCustomBannerView{
             banner.height = customView.frame.height

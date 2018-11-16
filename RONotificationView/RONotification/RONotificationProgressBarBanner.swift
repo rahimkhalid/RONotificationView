@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class RONotificationProgressBarBanner: RONotificationView{
     
@@ -23,6 +24,19 @@ public class RONotificationProgressBarBanner: RONotificationView{
             let current = position > 100 ? 100 : position
             
             banner.animateProgressBarTo(position: current, final: config.progressBarEndPosition)
+            
         }
+    }
+    
+    public init(presentOn view: UIView, config: RONotificationProgressBarBannerConfiguration) {
+        
+        super.init(presentOn: view, config: config)
+        self.type = RONotificationType.progress
+    }
+    
+    public init(presentOn controller: UIViewController, config: RONotificationProgressBarBannerConfiguration) {
+        
+        super.init(presentOn: controller.view, config: config)
+        self.type = RONotificationType.progress
     }
 }

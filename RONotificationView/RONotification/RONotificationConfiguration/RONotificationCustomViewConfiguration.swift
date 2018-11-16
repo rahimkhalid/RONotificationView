@@ -10,9 +10,11 @@ import Foundation
 
 public class RONotificationCustomViewConfiguration: RONotificationConfiguration {
     
+    public var isToAnimateView: Bool
     public var duration: TimeInterval
     
-    init(duration:TimeInterval = 0) {
+    init(duration:TimeInterval = 0, isToAnimateView: Bool = true) {
         self.duration = duration
+        self.isToAnimateView = isToAnimateView
     }
 }

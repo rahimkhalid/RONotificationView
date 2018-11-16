@@ -16,14 +16,21 @@ public class RONotificationView {
     internal var type:RONotificationType?
     private(set) var isVisiable = false
     private(set) var onDismiss: (() -> ())?
-    
-    internal weak var window:UIWindow? = {
-        return UIApplication.shared.keyWindow
+    private(set) lazy var animationDuration: TimeInterval = {
+        return configuration.isToAnimateView ? 0.3 : 0
     }()
     
+    internal weak var presenter:UIView? = UIApplication.shared.keyWindow
+    
     internal lazy var safeAreaTopInset:CGFloat = {
-        return window?.safeAreaInsets.top
+        return presenter?.safeAreaInsets.top
     }()!
+    
+    public init(presentOn view:UIView?, config: RONotificationConfiguration) {
+        configuration = config
+        setupNotificationForRotation()
+        self.presenter = view
+    }
     
     public init(config: RONotificationConfiguration) {
         configuration = config
@@ -82,9 +89,9 @@ public class RONotificationView {
         
         guard let banner = bannerView else { return }
         setupFrames(for: banner, y: -(banner.getHeight() + safeAreaTopInset), height: banner.getHeight())
-        window?.addSubview(banner)
+        presenter?.addSubview(banner)
         
-        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+        UIView.animate(withDuration: animationDuration, animations: {[weak self] in
             
             guard let weakSelf = self ,
                 let banner = weakSelf.bannerView  else { return }
@@ -106,16 +113,21 @@ public class RONotificationView {
     private func hideBannerAfter(_ time:TimeInterval){
         if !time.isLessThanOrEqualTo(0){
             DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {[weak self] in
-                self?.hideBanner(completion: {
-                    self?.onDismiss?()
-                })
+                guard let weakSelf = self else { return }
+                if weakSelf.isVisiable {
+                    self?.hideBanner(completion: {
+                        self?.onDismiss?()
+                    })
+                }
             })
         }
     }
     
     public func hideBanner(completion: @escaping () -> Void) {
 
-        UIView.animate(withDuration: 0.3, animations: {[weak self] in
+        isVisiable = false
+        
+        UIView.animate(withDuration: animationDuration, animations: {[weak self] in
             guard let weakSelf = self,
                 let banner = weakSelf.bannerView else {
                     return
@@ -125,9 +137,9 @@ public class RONotificationView {
             guard let weakSelf = self else {
                 return
             }
-            weakSelf.isVisiable = false
             
             weakSelf.bannerView?.removeFromSuperview()
+            weakSelf.bannerView = nil
             completion()
         }
     }

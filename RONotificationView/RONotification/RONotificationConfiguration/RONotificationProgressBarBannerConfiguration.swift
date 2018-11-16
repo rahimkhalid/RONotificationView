@@ -11,6 +11,7 @@ import UIKit
 
 public class RONotificationProgressBarBannerConfiguration: RONotificationConfiguration {
     
+    public var isToAnimateView: Bool
     public var backgroundColor: UIColor
     public var isToShowProgressCount: Bool
     public var progressBarColor: UIColor
@@ -23,7 +24,8 @@ public class RONotificationProgressBarBannerConfiguration: RONotificationConfigu
     
     init(progressBarColor:UIColor,
          progressBarStartPosition:Float,
-         progressBarEndPosition:Float) {
+         progressBarEndPosition:Float,
+         isToAnimateView:Bool = true) {
         
         self.backgroundColor = UIColor(white: 1, alpha: 0.5)
         self.isToShowProgressCount = true
@@ -34,6 +36,7 @@ public class RONotificationProgressBarBannerConfiguration: RONotificationConfigu
         self.progressBarCurrentPosition = progressBarStartPosition
         self.progressBarEndPosition = progressBarEndPosition
         self.isToAnimateProgressBarGradient = false
+        self.isToAnimateView = isToAnimateView
     }
     
     internal func setCurrentProgress(progress:Float){
