@@ -16,13 +16,16 @@ internal class RONotificationMessageBannerView: UIView {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var message: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    internal weak var delegate: RONotificationViewDelegate?
     
-    internal static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
+    internal static func getViewForConfiguration(config: RONotificationConfiguration, delegate: RONotificationViewDelegate) -> UIView {
         
         if let nib = Bundle.main.loadNibNamed(String(describing: self) , owner: self, options: nil)?.first as? UIView,
             let view = nib as? RONotificationMessageBannerView {
             
             view.setupUIFor(Configuration: config)
+            view.setupGesture()
+            view.delegate = delegate
             return view
         }
         
@@ -37,8 +40,18 @@ internal class RONotificationMessageBannerView: UIView {
         if !activityIndicator.isHidden{
             activityIndicator.startAnimating()
         }
-        dragView.isHidden = !(config.isDragable  ?? false)
+        dragView.isHidden = true
+        //dragView.isHidden = !(config.isDragable  ?? false)
         image.image = config.image
+    }
+    
+    private func setupGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RONotificationMessageBannerView.handleTap))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc private func handleTap() {
+        delegate?.didTappedNotificationBanner?()
     }
     
     internal override func getHeight() -> CGFloat{

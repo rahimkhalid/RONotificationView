@@ -12,13 +12,16 @@ import UIKit
 internal class RONotificationStatusBarBannerView: UIView {
     
     @IBOutlet private weak var bannerTitle: UILabel!
-
-    internal static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
+    internal weak var delegate: RONotificationViewDelegate?
+    
+    internal static func getViewForConfiguration(config: RONotificationConfiguration, delegate: RONotificationViewDelegate) -> UIView {
         
         if let nib = Bundle.main.loadNibNamed(String(describing: self) , owner: self, options: nil)?.first as? UIView,
             let view = nib as? RONotificationStatusBarBannerView {
             
             view.setupUIFor(Configuration: config)
+            view.setupGesture()
+            view.delegate = delegate
             return view
         }
         
@@ -29,8 +32,19 @@ internal class RONotificationStatusBarBannerView: UIView {
         bannerTitle.text = config.message
     }
     
+    private func setupGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RONotificationStatusBarBannerView.handleTap))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc private func handleTap() {
+        delegate?.didTappedNotificationBanner?()
+    }
+    
     internal override func getHeight() -> CGFloat{
         let height = UIApplication.shared.statusBarFrame.height
         return height == 0 ? 20 : height
     }
+    
+    
 }

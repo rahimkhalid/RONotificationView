@@ -19,7 +19,7 @@ import UIKit
     @objc optional var titleTextColor: UIColor {get set}
     @objc optional var backgroundColor: UIColor {get set}
     @objc optional var image: UIImage {get set}
-    @objc optional var isDragable: Bool {get set}
+    //@objc optional var isDragable: Bool {get set}
     @objc optional var title: String {get set}
     @objc optional var message: String {get set}
     @objc optional var isToShowLoader: Bool {get set}

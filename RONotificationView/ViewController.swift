@@ -58,7 +58,14 @@ class ViewController: UIViewController {
             if messageBanner == nil {
                 messageBanner = RONotificationMessageBanner(configuration)
             }
-            messageBanner.showBanner()
+            messageBanner.showBanner(onDismiss: {
+                
+            }, onTap: {[weak self] in
+                self?.messageBanner.hideBanner()
+                self?.isNotificationVisible = self?.isAnyNotificationVisible() ?? false
+            }) {
+                
+            }
             isNotificationVisible = true
         }
         
@@ -103,7 +110,11 @@ class ViewController: UIViewController {
         var current:Float = 0
         var timer:Timer? = nil
         
-        progressBar.showBanner  {[weak self] in
+        progressBar.showBanner(onDismiss: {
+            
+        }, onTap: {
+            
+        }) {[weak self] in
             timer?.invalidate()
             timer = nil
             self?.progressBar.hideBanner()

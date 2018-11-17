@@ -13,17 +13,20 @@ internal class RONotificationProgressBarBannerView: UIView {
     @IBOutlet private weak var progressViewWidth: NSLayoutConstraint!
     @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var progressCountLabel: UILabel!
+    internal weak var delegate: RONotificationViewDelegate?
     
     internal override func getHeight() -> CGFloat {
         return progressCountLabel.isHidden ? 7 : 15
     }
     
-    internal static func getViewForConfiguration(config: RONotificationConfiguration) -> UIView {
+    internal static func getViewForConfiguration(config: RONotificationConfiguration, delegate: RONotificationViewDelegate) -> UIView {
         
         if let nib = Bundle.main.loadNibNamed(String(describing: self) , owner: self, options: nil)?.first as? UIView,
             let view = nib as? RONotificationProgressBarBannerView {
             
             view.setupUIFor(Configuration: config)
+            view.setupGesture()
+            view.delegate = delegate
             return view
         }
         
@@ -96,11 +99,17 @@ internal class RONotificationProgressBarBannerView: UIView {
             }
             weakSelf.progressView.superview?.layoutIfNeeded()
             weakSelf.progressView.layer.sublayers?.first?.frame = weakSelf.progressView.frame
-            
-            
         }) { (_) in
             completion(position)
         }
-        
+    }
+    
+    private func setupGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RONotificationProgressBarBannerView.handleTap))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc private func handleTap() {
+        delegate?.didTappedNotificationBanner?()
     }
 }

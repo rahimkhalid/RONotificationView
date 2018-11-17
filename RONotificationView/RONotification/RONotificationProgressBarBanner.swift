@@ -25,7 +25,7 @@ public class RONotificationProgressBarBanner: RONotificationView{
             
             banner.animateProgressBarTo(position: current, final: config.progressBarEndPosition, completion: { [weak self](pos) in
                 if pos == config.progressBarEndPosition{
-                    self?.onDismiss?()
+                    self?.onCompleted?()
                 }
             })
             

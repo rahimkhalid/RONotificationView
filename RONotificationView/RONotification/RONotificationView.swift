@@ -16,6 +16,9 @@ public class RONotificationView {
     internal var type:RONotificationType?
     private(set) var isVisiable = false
     private(set) var onDismiss: (() -> ())?
+    private(set) var onTap: (() -> ())?
+    private(set) var onCompleted: (() -> ())?
+    
     private(set) lazy var animationDuration: TimeInterval = {
         return configuration.isToAnimateView ? 0.3 : 0
     }()
@@ -68,13 +71,15 @@ public class RONotificationView {
         }
     }
     
-    public func showBanner(onDismiss: (() -> ())? = nil) {
+    public func showBanner(onDismiss: (() -> ())? = nil, onTap: (() -> ())? = nil, onProgressCompleted: (() -> ())? = nil) {
         
         self.onDismiss = onDismiss
+        self.onCompleted = onProgressCompleted
+        self.onTap = onTap
         
         if bannerView == nil{
             if let t = type {
-                bannerView = RONotificationManager.getNotificationBarConfiguration(for: t,configuration: self.configuration)
+                bannerView = RONotificationManager.getNotificationBar(for: t,configuration: self.configuration, delegate: self)
             }
         }
         
@@ -141,4 +146,10 @@ public class RONotificationView {
         NotificationCenter.default.removeObserver(self)
     }
     
+}
+
+extension RONotificationView : RONotificationViewDelegate{
+    func didTappedNotificationBanner() {
+        self.onTap?()
+    }
 }

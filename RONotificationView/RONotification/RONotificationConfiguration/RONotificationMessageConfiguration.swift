@@ -19,7 +19,7 @@ public class RONotificationMessageConfiguration: RONotificationConfiguration {
     public var messageTextColor: UIColor
     public var backgroundColor: UIColor
     public var image: UIImage
-    public var isDragable: Bool
+    //public var isDragable: Bool
     public var title: String
     public var message: String
     public var isToShowLoader: Bool
@@ -35,7 +35,7 @@ public class RONotificationMessageConfiguration: RONotificationConfiguration {
         self.messageTextColor = UIColor.white
         self.backgroundColor = UIColor.darkGray
         self.image = UIImage()
-        self.isDragable = false
+        //self.isDragable = false
         self.title = title
         self.message = message
         self.isToShowLoader = false
