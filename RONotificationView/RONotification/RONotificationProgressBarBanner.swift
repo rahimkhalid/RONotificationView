@@ -13,7 +13,7 @@ public class RONotificationProgressBarBanner: RONotificationView{
     
     init(_ config: RONotificationProgressBarBannerConfiguration) {
         super.init(config: config)
-        self.type = RONotificationType.progress
+        self.type = .Progress
     }
     
     public func updateProgressBarTo(position: Float){
@@ -35,12 +35,14 @@ public class RONotificationProgressBarBanner: RONotificationView{
     public init(presentOn view: UIView, config: RONotificationProgressBarBannerConfiguration) {
         
         super.init(presentOn: view, config: config)
-        self.type = RONotificationType.progress
+        self.type = .Progress
+        self.presenterType = .View
     }
     
     public init(presentOn controller: UIViewController, config: RONotificationProgressBarBannerConfiguration) {
         
         super.init(presentOn: controller.view, config: config)
-        self.type = RONotificationType.progress
+        self.type = .Progress
+        self.presenterType = .Controller
     }
 }

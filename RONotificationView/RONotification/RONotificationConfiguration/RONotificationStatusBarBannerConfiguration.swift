@@ -19,7 +19,7 @@ public class RONotificationStatusBarBannerConfiguration: RONotificationConfigura
     public var messageFont: UIFont
     
     init(message: String,
-         isToAnimateView: Bool = false) {
+         isToAnimateView: Bool = true) {
         
         self.messageFont = UIFont.systemFont(ofSize: 11, weight: .bold)
         self.duration = 0

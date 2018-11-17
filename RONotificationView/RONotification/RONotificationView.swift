@@ -19,12 +19,10 @@ public class RONotificationView {
     private(set) lazy var animationDuration: TimeInterval = {
         return configuration.isToAnimateView ? 0.3 : 0
     }()
+    internal var presenterType: RONotificationPresenterType = .Window
+    private var timer: Timer?
     
     internal weak var presenter:UIView? = UIApplication.shared.keyWindow
-    
-    internal lazy var safeAreaTopInset:CGFloat = {
-        return presenter?.safeAreaInsets.top
-    }()!
     
     public init(presentOn view:UIView?, config: RONotificationConfiguration) {
         configuration = config
@@ -48,10 +46,7 @@ public class RONotificationView {
         if isVisiable{
             if let banner = bannerView{
                 
-                var y:CGFloat = 0
-                if UIDevice.current.orientation.isPortrait{
-                    y = type == RONotificationType.progress ? safeAreaTopInset : 0
-                }
+                let y = type?.getTopSpacing(for: presenterType) ?? 0
                 setupFrames(for: banner , y: y, height: banner.getHeight())
                 banner.superview?.layoutIfNeeded()
             }
@@ -61,12 +56,10 @@ public class RONotificationView {
     
     private func setupFrames(for banner:UIView, y:CGFloat,height:CGFloat){
         
-        var cHeight = banner.getHeight()
-        if UIDevice.current.orientation.isPortrait && type != RONotificationType.progress{
-            cHeight = cHeight + safeAreaTopInset
-        }
+        let cHeight = banner.getHeight() + (type?.getExtraHeightForBanner(with: presenterType) ?? 0)
+        
         banner.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: cHeight)
-        if type == RONotificationType.progress{
+        if type == .Progress{
             if let progressBanner = self as? RONotificationProgressBarBanner{
                 
                 let position = configuration.progressBarCurrentPosition ?? 0
@@ -88,19 +81,17 @@ public class RONotificationView {
         isVisiable = true
         
         guard let banner = bannerView else { return }
-        setupFrames(for: banner, y: -(banner.getHeight() + safeAreaTopInset), height: banner.getHeight())
+        
+        let y = type?.getTopSpacing(for: presenterType) ?? 0
+        setupFrames(for: banner, y: -(banner.getHeight() + y), height: banner.getHeight())
         presenter?.addSubview(banner)
         
         UIView.animate(withDuration: animationDuration, animations: {[weak self] in
             
             guard let weakSelf = self ,
                 let banner = weakSelf.bannerView  else { return }
-            var y:CGFloat = 0
-            if UIDevice.current.orientation.isPortrait{
-                y = weakSelf.type == RONotificationType.progress ? weakSelf.safeAreaTopInset : 0
-            }
             
-            
+            let y = weakSelf.type?.getTopSpacing(for: weakSelf.presenterType) ?? 0
             weakSelf.setupFrames(for: banner, y: y, height: banner.getHeight())
             
         }){ [weak self] (_) in
@@ -112,34 +103,36 @@ public class RONotificationView {
     
     private func hideBannerAfter(_ time:TimeInterval){
         if !time.isLessThanOrEqualTo(0){
-            DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {[weak self] in
+            
+            timer = Timer.scheduledTimer(withTimeInterval: time, repeats: true) { [weak self](_) in
                 guard let weakSelf = self else { return }
                 if weakSelf.isVisiable {
                     self?.hideBanner(completion: {
                         self?.onDismiss?()
                     })
                 }
-            })
+            }
         }
     }
     
     public func hideBanner(completion: (() -> ())? = nil) {
 
         isVisiable = false
-        
+        timer?.invalidate()
         UIView.animate(withDuration: animationDuration, animations: {[weak self] in
             guard let weakSelf = self,
                 let banner = weakSelf.bannerView else {
                     return
             }
-            weakSelf.setupFrames(for: banner, y: -(banner.getHeight() + weakSelf.safeAreaTopInset), height: banner.getHeight())
+            
+            let y = weakSelf.type?.getTopSpacing(for: weakSelf.presenterType) ?? 0
+            weakSelf.setupFrames(for: banner, y: -(banner.getHeight() + y), height: banner.getHeight())
         }) { [weak self](_) in
             guard let weakSelf = self else {
                 return
             }
             
             weakSelf.bannerView?.removeFromSuperview()
-            weakSelf.bannerView = nil
             completion?()
         }
     }

@@ -26,7 +26,7 @@ public class RONotificationMessageConfiguration: RONotificationConfiguration {
     
     init(title: String,
          message: String,
-         isToAnimateView: Bool = false) {
+         isToAnimateView: Bool = true) {
         
         self.messageFont = UIFont.systemFont(ofSize: 11, weight: .regular)
         self.titleFont = UIFont.systemFont(ofSize: 11, weight: .bold)

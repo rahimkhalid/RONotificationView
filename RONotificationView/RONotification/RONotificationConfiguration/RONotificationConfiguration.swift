@@ -23,7 +23,6 @@ import UIKit
     @objc optional var title: String {get set}
     @objc optional var message: String {get set}
     @objc optional var isToShowLoader: Bool {get set}
-    //@objc optional var progressBarGradient: CAGradientLayer? {get set}
     @objc optional var isToAnimateProgressBarGradient: Bool {get set}
     @objc optional var progressBarColor: UIColor {get set}
     @objc optional var isToShowProgressCount: Bool {get set}
