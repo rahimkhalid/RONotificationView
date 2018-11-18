@@ -22,7 +22,7 @@ public class RONotificationView {
     private(set) lazy var animationDuration: TimeInterval = {
         return configuration.isToAnimateView ? 0.3 : 0
     }()
-    internal var presenterType: RONotificationPresenterType = .Window
+    internal var presenterType: RONotificationPresenterType = .window
     private var timer: Timer?
     
     internal weak var presenter:UIView? = UIApplication.shared.keyWindow
@@ -62,7 +62,7 @@ public class RONotificationView {
         let cHeight = banner.getHeight() + (type?.getExtraHeightForBanner(with: presenterType) ?? 0)
         
         banner.frame = CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: cHeight)
-        if type == .Progress{
+        if type == .progress{
             if let progressBanner = self as? RONotificationProgressBarBanner{
                 
                 let position = configuration.progressBarCurrentPosition ?? 0

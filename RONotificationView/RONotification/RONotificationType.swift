@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 internal enum RONotificationType {
-    case Progress
-    case Message
-    case OnStatusBar
-    case Custom
+    case progress
+    case message
+    case onStatusBar
+    case custom
     
     func getTopSpacing(for presenterType:RONotificationPresenterType) -> CGFloat{
         
         let orientation = UIDevice.current.orientation
         switch presenterType {
-        case .Window:
+        case .window:
             return self.getTopSpacingForWindow(with: orientation)
         default:
             return 0
@@ -30,7 +30,7 @@ internal enum RONotificationType {
         switch orientation {
         case .portrait:
             switch self {
-            case .Progress:
+            case .progress:
                 return UIApplication.shared.keyWindow!.safeAreaInsets.top
             default:
                 return 0
@@ -45,7 +45,7 @@ internal enum RONotificationType {
         let orientation = UIDevice.current.orientation
         
         switch presenterType {
-        case .Window:
+        case .window:
             return getHeightForBannerPresentedOnWindow(with: orientation)
         default:
             return 0
@@ -56,7 +56,7 @@ internal enum RONotificationType {
         switch orientation {
         case .portrait:
             switch self{
-            case .Progress:
+            case .progress:
                 return 0
             default :
                 return UIApplication.shared.keyWindow!.safeAreaInsets.top
@@ -68,7 +68,7 @@ internal enum RONotificationType {
 }
 
 internal enum RONotificationPresenterType {
-    case View
-    case Controller
-    case Window
+    case view
+    case controller
+    case window
 }

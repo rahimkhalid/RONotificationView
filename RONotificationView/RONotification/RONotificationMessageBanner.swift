@@ -13,18 +13,18 @@ public class RONotificationMessageBanner: RONotificationView{
 
     public init(_ config: RONotificationMessageConfiguration) {
         super.init(config: config)
-        self.type = .Message
+        self.type = .message
     }
     
     public init(presentOn view: UIView, config: RONotificationMessageConfiguration) {
         super.init(presentOn: view, config: config)
-        self.type = .Message
-        self.presenterType = .View
+        self.type = .message
+        self.presenterType = .view
     }
     
     public init(presentOn controller: UIViewController, config: RONotificationMessageConfiguration) {
         super.init(presentOn: controller.view, config: config)
-        self.type = .Message
-        self.presenterType = .Controller
+        self.type = .message
+        self.presenterType = .controller
     }
 }

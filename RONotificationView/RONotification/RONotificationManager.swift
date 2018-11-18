@@ -13,11 +13,11 @@ internal class RONotificationManager {
     
     internal static func getNotificationBar(for type:RONotificationType, configuration:RONotificationConfiguration, delegate: RONotificationViewDelegate) -> UIView{
         switch type {
-        case .Message:
+        case .message:
             return RONotificationMessageBannerView.getViewForConfiguration(config: configuration, delegate: delegate)
-        case .OnStatusBar:
+        case .onStatusBar:
             return RONotificationStatusBarBannerView.getViewForConfiguration(config: configuration, delegate: delegate)
-        case .Progress:
+        case .progress:
             return RONotificationProgressBarBannerView.getViewForConfiguration(config: configuration, delegate: delegate)
         default:
             return UIView()

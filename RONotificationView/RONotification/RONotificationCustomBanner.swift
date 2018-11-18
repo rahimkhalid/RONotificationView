@@ -15,7 +15,7 @@ public class RONotificationCustomBanner: RONotificationView{
         
         super.init(config: configuration)
         self.bannerView = customView
-        self.type = .Custom
+        self.type = .custom
         if let banner = bannerView as? RONotificationCustomBannerView{
             banner.height = customView.frame.height
         }
@@ -25,8 +25,8 @@ public class RONotificationCustomBanner: RONotificationView{
         
         super.init(presentOn: view, config: config)
         self.bannerView = customView
-        self.type = .Custom
-        self.presenterType = .View
+        self.type = .custom
+        self.presenterType = .view
         
         if let banner = bannerView as? RONotificationCustomBannerView{
             banner.height = customView.frame.height
@@ -37,8 +37,8 @@ public class RONotificationCustomBanner: RONotificationView{
         
         super.init(presentOn: controller.view, config: config)
         self.bannerView = customView
-        self.type = .Custom
-        self.presenterType = .Controller
+        self.type = .custom
+        self.presenterType = .controller
         
         if let banner = bannerView as? RONotificationCustomBannerView{
             banner.height = customView.frame.height
