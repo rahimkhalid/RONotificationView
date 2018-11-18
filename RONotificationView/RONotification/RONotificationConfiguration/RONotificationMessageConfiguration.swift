@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// RONV: child class of RONotificationConfiguration for setting configuration of Message banner.
 public class RONotificationMessageConfiguration: RONotificationConfiguration {
     
     public var isToAnimateView: Bool

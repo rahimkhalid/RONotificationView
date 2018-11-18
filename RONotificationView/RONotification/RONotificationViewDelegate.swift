@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// RONV: RONotificationViewDelegate is used for getting callBack for banner tapped.
 @objc internal protocol RONotificationViewDelegate: class {
     @objc optional func didTappedNotificationBanner()
 }

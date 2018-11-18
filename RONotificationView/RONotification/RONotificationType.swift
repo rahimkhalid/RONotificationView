@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
+/// RONV: RONotificationType is a Enum used to set and help identify user selected type and based on that perform operation.
 internal enum RONotificationType {
     case progress
     case message
     case onStatusBar
     case custom
     
+    /// RONV: help for getting spacing on devices with notch based on logic according to presenter type.
     func getTopSpacing(for presenterType:RONotificationPresenterType) -> CGFloat{
         
         let orientation = UIDevice.current.orientation
@@ -26,6 +28,7 @@ internal enum RONotificationType {
         }
     }
     
+    /// RONV: get top spacing for presenter as Window for progressBar
     func getTopSpacingForWindow(with orientation:UIDeviceOrientation) -> CGFloat{
         switch orientation {
         case .portrait:
@@ -41,6 +44,7 @@ internal enum RONotificationType {
         }
     }
     
+    /// RONV: Get extra height for devices with notch.
     func getExtraHeightForBanner(with presenterType: RONotificationPresenterType) -> CGFloat{
         let orientation = UIDevice.current.orientation
         
@@ -52,6 +56,7 @@ internal enum RONotificationType {
         }
     }
     
+    /// RONV: Get extra height for devices with notch when presenter is Window.
     func getHeightForBannerPresentedOnWindow(with orientation:UIDeviceOrientation) -> CGFloat{
         switch orientation {
         case .portrait:
@@ -67,6 +72,7 @@ internal enum RONotificationType {
     }
 }
 
+/// RONV: Help identify presenter Type.
 internal enum RONotificationPresenterType {
     case view
     case controller

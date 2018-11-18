@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// RONV: RONotificationManager is used get view based on type.
 internal class RONotificationManager {
     
     internal static func getNotificationBar(for type:RONotificationType, configuration:RONotificationConfiguration, delegate: RONotificationViewDelegate) -> UIView{

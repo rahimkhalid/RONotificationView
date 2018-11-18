@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// RONV: child class of RONotificationConfiguration for setting configuration of ProgressBar banner.
 public class RONotificationProgressBarBannerConfiguration: RONotificationConfiguration {
     
     public var isToAnimateView: Bool

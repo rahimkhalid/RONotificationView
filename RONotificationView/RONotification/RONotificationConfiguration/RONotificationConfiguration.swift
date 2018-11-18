@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// RONV: RONotificationConfiguration is protocol help in setting configuration for different types of banner.
 @objc public protocol RONotificationConfiguration {
     
     @objc var isToAnimateView: Bool {get set}

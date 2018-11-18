@@ -9,35 +9,59 @@
 import Foundation
 import UIKit
 
+/// RONV: RONotificationView is the base class for StatusBar, Message, ProgressBar and custom banner.
+
 public class RONotificationView {
     
+    /// RONV: require configuration for setting-up banner. (basically for custom design)
     internal var configuration: RONotificationConfiguration
+    
+    /// RONV: set according to user init base class.
     internal var bannerView: UIView?
     internal var type:RONotificationType?
+    
+    /// RONV: use to check is banner currently visible.
     private(set) var isVisiable = false
+    
+    /// RONV: completion handler for dismiss
     private(set) var onDismiss: (() -> ())?
+    
+    /// RONV: completion handler for tap on banner.
     private(set) var onTap: (() -> ())?
+    
+    /// RONV: completion handler for progress completed
     private(set) var onCompleted: (() -> ())?
     
+    /// RONV: set animation duration based on user config i.e if setted to animate or not to.
     private(set) lazy var animationDuration: TimeInterval = {
         return configuration.isToAnimateView ? 0.3 : 0
     }()
+    
+    /// RONV: help to identify the presenter view (window as default, view , controller)
     internal var presenterType: RONotificationPresenterType = .window
+    
+    /// RONV: for duration based banners.
     private var timer: Timer?
     
+    /// RONV: view where banner will be presented.
     internal weak var presenter:UIView? = UIApplication.shared.keyWindow
     
-    public init(presentOn view:UIView?, config: RONotificationConfiguration) {
+    //MARK: Initializing
+    
+    /// RONV: initializer with presenter and config.
+    internal init(presentOn view:UIView?, config: RONotificationConfiguration) {
         configuration = config
         setupNotificationForRotation()
         self.presenter = view
     }
     
-    public init(config: RONotificationConfiguration) {
+    /// RONV: If to present on window, this initializer will be called.
+    internal init(config: RONotificationConfiguration) {
         configuration = config
         setupNotificationForRotation()
     }
     
+    /// RONV: Used to setup notification for orientation change.
     private func setupNotificationForRotation() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleRotation),
@@ -45,6 +69,7 @@ public class RONotificationView {
                                                object: nil)
     }
     
+    /// RONV: when orientation change this will be called.
     @objc private func handleRotation() {
         if isVisiable{
             if let banner = bannerView{
@@ -57,6 +82,7 @@ public class RONotificationView {
         }
     }
     
+    /// RONV: on every time orientation change or view need to be presented or dismiss this will be called to update frames.
     private func setupFrames(for banner:UIView, y:CGFloat,height:CGFloat){
         
         let cHeight = banner.getHeight() + (type?.getExtraHeightForBanner(with: presenterType) ?? 0)
@@ -71,6 +97,10 @@ public class RONotificationView {
         }
     }
     
+    /// RONV: Show banner will be used for the purpose of showing banner and dismiss, tap and progress completed completion will be set based on user requirement.
+    /// RONV: ONDismiss handler will be called when banner need to be dismiss after duration,
+    /// RONV: ONTap handler will be called when user tap on the banner
+    /// RONV: progressCompleted handler will be called when progress bar will be completed.
     public func showBanner(onDismiss: (() -> ())? = nil, onTap: (() -> ())? = nil, onProgressCompleted: (() -> ())? = nil) {
         
         self.onDismiss = onDismiss
@@ -106,6 +136,7 @@ public class RONotificationView {
         }
     }
     
+    /// RONV: It takes duration time as argument and call hide banner after that interval.
     private func hideBannerAfter(_ time:TimeInterval){
         if !time.isLessThanOrEqualTo(0){
             
@@ -120,6 +151,7 @@ public class RONotificationView {
         }
     }
     
+    /// RONV: This hides banner.
     public func hideBanner(completion: (() -> ())? = nil) {
 
         isVisiable = false
@@ -149,6 +181,7 @@ public class RONotificationView {
 }
 
 extension RONotificationView : RONotificationViewDelegate{
+    /// RONV: When user tap on banner internal delegate called, leads to onTap completion handler.
     func didTappedNotificationBanner() {
         self.onTap?()
     }

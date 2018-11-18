@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// RONV: child class of RONotificationConfiguration for setting configuration of Custom banner.
 public class RONotificationCustomViewConfiguration: RONotificationConfiguration {
     
     public var isToAnimateView: Bool
