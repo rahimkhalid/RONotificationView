@@ -14,7 +14,7 @@ import UIKit
 public class RONotificationView {
     
     /// RONV: require configuration for setting-up banner. (basically for custom design)
-    internal var configuration: RONotificationConfiguration
+    internal var configuration: RONotificationConfiguration!
     
     /// RONV: set according to user init base class.
     internal var bannerView: UIView?
@@ -47,6 +47,8 @@ public class RONotificationView {
     internal weak var presenter:UIView? = UIApplication.shared.keyWindow
     
     //MARK: Initializing
+    
+    private init(){}
     
     /// RONV: initializer with presenter and config.
     internal init(presentOn view:UIView?, config: RONotificationConfiguration) {

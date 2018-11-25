@@ -15,7 +15,19 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomView" customModule="RONotificationView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDw-Sb-0cY">
+                    <rect key="frame" x="161" y="36" width="53" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="0.72262394429999999" green="0.1830340922" blue="0.25090995430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="wDw-Sb-0cY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Atw-B9-SLE"/>
+                <constraint firstItem="wDw-Sb-0cY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dQI-EO-QEe"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-26" y="-56"/>

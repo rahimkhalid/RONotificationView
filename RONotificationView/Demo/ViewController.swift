@@ -94,7 +94,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func switchScreen(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        //self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func progressBanner(_ seROnder: UIButton) {
