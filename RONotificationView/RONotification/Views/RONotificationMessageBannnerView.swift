@@ -32,10 +32,16 @@ internal class RONotificationMessageBannerView: UIView {
         return UIView()
     }
     
-    private func setupUIFor(Configuration config: RONotificationConfiguration){
-        
+    internal func setupUIFor(Configuration config: RONotificationConfiguration){
+
         message.text = config.message
         title.text = config.title
+        message.font = config.messageFont
+        title.font = config.titleFont
+        
+        message.textColor = config.messageTextColor
+        title.textColor = config.titleTextColor
+        self.backgroundColor = config.backgroundColor
         activityIndicator.isHidden = !(config.isToShowLoader ?? false)
         if !activityIndicator.isHidden{
             activityIndicator.startAnimating()

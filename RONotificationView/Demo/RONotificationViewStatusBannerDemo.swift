@@ -23,18 +23,62 @@ class RONotificationViewStatusBannerDemo: UIViewController {
     var windowBanner: RONotificationView!
     var controllerBanner: RONotificationView!
     var viewBanner: RONotificationView!
+    var configuration: RONotificationStatusBarBannerConfiguration!
     
     override func viewDidLoad() {
-        
+        configuration = RONotificationStatusBarBannerConfiguration(message: messageTxtField.text ?? "", isToAnimateView: animateSwitch.isOn)
+    }
+    
+    func createConfiguration(){
+        configuration.backgroundColor = colors[Int(backgroundColorSlider.value)]
+        configuration.messageTextColor = colors[Int(textColorSlider.value)]
+        configuration.message = messageTxtField.text ?? ""
+        configuration.isToAnimateView = animateSwitch.isOn
+        configuration.duration = ((durationTxtField.text ?? "0") as NSString).doubleValue
     }
     
     @IBAction func showBannerOnWindow(_ sender: UIButton) {
+        if windowBanner == nil{
+            windowBanner = RONotificationStatusBarBanner(configuration)
+        }
+        
+        if windowBanner.isVisiable {
+            windowBanner.hideBanner()
+        }else{
+            createConfiguration()
+            windowBanner.updateConfiguration(config: configuration)
+            
+            windowBanner.showBanner()
+        }
         
     }
     @IBAction func showBannerOnView(_ sender: UIButton) {
+        if viewBanner == nil{
+            viewBanner = RONotificationStatusBarBanner(presentOn: configurationView, config: configuration)
+        }
         
+        if viewBanner.isVisiable {
+            viewBanner.hideBanner()
+        }else{
+            createConfiguration()
+            viewBanner.updateConfiguration(config: configuration)
+            
+            viewBanner.showBanner()
+        }
     }
+    
     @IBAction func showBannerOnController(_ sender: UIButton) {
+        if controllerBanner == nil{
+            controllerBanner = RONotificationStatusBarBanner(presentOn: self, config: configuration)
+        }
         
+        if controllerBanner.isVisiable {
+            controllerBanner.hideBanner()
+        }else{
+            createConfiguration()
+            controllerBanner.updateConfiguration(config: configuration)
+            
+            controllerBanner.showBanner()
+        }
     }
 }

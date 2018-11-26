@@ -24,4 +24,19 @@ extension RONotificationViewDemo : UITableViewDelegate, UITableViewDataSource {
         cell?.textLabel?.text = roNotificationTypes[indexPath.row]
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: "statusBarDemoSegue", sender: nil)
+        case 1:
+            performSegue(withIdentifier: "MessageBannerDemoSegue", sender: nil)
+        case 2:
+            performSegue(withIdentifier: "customBannerDemoSegue", sender: nil)
+        case 3:
+            performSegue(withIdentifier: "progressBarDemoSegue", sender: nil)
+        default:
+            return
+        }
+    }
 }

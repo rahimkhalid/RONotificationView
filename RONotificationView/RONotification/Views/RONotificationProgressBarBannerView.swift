@@ -33,9 +33,10 @@ internal class RONotificationProgressBarBannerView: UIView {
         return UIView()
     }
     
-    private func setupUIFor(Configuration config: RONotificationConfiguration){
+    internal func setupUIFor(Configuration config: RONotificationConfiguration){
         
         progressViewWidth.constant = CGFloat(config.progressBarCurrentPosition ?? 0)
+        self.backgroundColor = config.backgroundColor
         
         if let animateProgressBarGradient = config.isToAnimateProgressBarGradient,
             let color = config.progressBarColor{
@@ -46,6 +47,9 @@ internal class RONotificationProgressBarBannerView: UIView {
         }
         
         progressCountLabel.isHidden = !(config.isToShowProgressCount ?? true)
+        progressCountLabel.font = config.progressCountFont
+        progressCountLabel.textColor = config.progressCountColor
+        
         if !progressCountLabel.isHidden{
             progressCountLabel.text = "\(config.progressBarCurrentPosition ?? 0)%"
         }
@@ -102,6 +106,10 @@ internal class RONotificationProgressBarBannerView: UIView {
         }) { (_) in
             completion(position)
         }
+    }
+    
+    internal func removeAnimateLayer(){
+        progressView.layer.sublayers?.remove(at: 0)
     }
     
     private func setupGesture(){

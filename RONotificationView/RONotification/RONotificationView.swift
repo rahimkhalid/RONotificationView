@@ -78,9 +78,53 @@ public class RONotificationView {
                 
                 let y = type?.getTopSpacing(for: presenterType) ?? 0
                 setupFrames(for: banner , y: y, height: banner.getHeight())
+                setupFrameOfPresenter(for: banner, hide: false)
                 banner.superview?.layoutIfNeeded()
             }
             
+        }
+    }
+    
+    func setupFrameForRootController(for banner:UIView, hide:Bool){
+        if let window = presenter as? UIWindow{
+            if let frame = window.rootViewController?.view.frame {
+                let extra = hide != true ? (type?.getExtraHeightForBanner(with: presenterType) ?? 0) : 0
+                if type == RONotificationType.progress && hide {
+                     window.rootViewController?.view.frame = CGRect(x: frame.origin.x, y: 0 , width: frame.width, height: window.frame.height)
+                }else{
+                    let y = banner.getHeight() + banner.frame.origin.y +  extra
+                     window.rootViewController?.view.frame = CGRect(x: frame.origin.x, y: y , width: frame.width, height: window.frame.height - y)
+                    
+                }
+               
+            }
+            
+        }
+    }
+    
+    func setupUIForRootController(hide:Bool) {
+        if hide{
+            if let window = presenter as? UIWindow,
+                let navController = window.rootViewController as? UINavigationController{
+                window.backgroundColor = UIColor.black
+            }
+        }else{
+            if let window = presenter as? UIWindow,
+                let navController = window.rootViewController as? UINavigationController{
+                window.backgroundColor = navController.navigationBar.barTintColor ?? UIColor.white
+            }
+        }
+        
+    }
+    
+    func setupFrameOfPresenter(for banner:UIView, hide: Bool) {
+        switch presenterType {
+        case .window:
+            setupFrameForRootController(for: banner, hide: hide)
+            setupUIForRootController(hide: hide)
+            break
+        default:
+            break
         }
     }
     
@@ -105,6 +149,9 @@ public class RONotificationView {
     /// RONV: progressCompleted handler will be called when progress bar will be completed.
     public func showBanner(onDismiss: (() -> ())? = nil, onTap: (() -> ())? = nil, onProgressCompleted: (() -> ())? = nil) {
         
+        if let progressBanner = self as? RONotificationProgressBarBanner{
+            progressBanner.isCompletedCalled = false
+        }
         self.onDismiss = onDismiss
         self.onCompleted = onProgressCompleted
         self.onTap = onTap
@@ -121,6 +168,7 @@ public class RONotificationView {
         
         let y = type?.getTopSpacing(for: presenterType) ?? 0
         setupFrames(for: banner, y: -(banner.getHeight() + y), height: banner.getHeight())
+        
         presenter?.addSubview(banner)
         
         UIView.animate(withDuration: animationDuration, animations: {[weak self] in
@@ -130,7 +178,7 @@ public class RONotificationView {
             
             let y = weakSelf.type?.getTopSpacing(for: weakSelf.presenterType) ?? 0
             weakSelf.setupFrames(for: banner, y: y, height: banner.getHeight())
-            
+            weakSelf.setupFrameOfPresenter(for: banner, hide: false)
         }){ [weak self] (_) in
             
             guard let weakSelf = self else { return }
@@ -166,14 +214,40 @@ public class RONotificationView {
             
             let y = weakSelf.type?.getTopSpacing(for: weakSelf.presenterType) ?? 0
             weakSelf.setupFrames(for: banner, y: -(banner.getHeight() + y), height: banner.getHeight())
+            weakSelf.setupFrameOfPresenter(for: banner, hide: true)
         }) { [weak self](_) in
             guard let weakSelf = self else {
                 return
             }
-            
+            if weakSelf.type == .progress{
+                if let progressBar = weakSelf.bannerView as? RONotificationProgressBarBannerView{
+                    progressBar.removeAnimateLayer()
+                }
+            }
             weakSelf.bannerView?.removeFromSuperview()
             completion?()
         }
+    }
+    
+    public func updateConfiguration(config: RONotificationConfiguration){
+        self.configuration = config
+        if bannerView != nil{
+            switch type! {
+            case RONotificationType.custom:
+                break
+            case RONotificationType.message:
+                (bannerView as! RONotificationMessageBannerView).setupUIFor(Configuration: config)
+                break
+            case RONotificationType.onStatusBar:
+                (bannerView as! RONotificationStatusBarBannerView).setupUIFor(Configuration: config)
+                break
+            case RONotificationType.progress:
+                (bannerView as! RONotificationProgressBarBannerView).setupUIFor(Configuration: config)
+                break
+                
+            }
+        }
+        
     }
     
     deinit {

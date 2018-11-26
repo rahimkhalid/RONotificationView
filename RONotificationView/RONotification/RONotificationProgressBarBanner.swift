@@ -12,6 +12,8 @@ import UIKit
 /// RONV: 'RONotificationProgressBarBanner' This is a child class for 'RONotificationView' basically used for setting up ProgressBar banner.
 public class RONotificationProgressBarBanner: RONotificationView{
     
+    internal var isCompletedCalled = false
+    
     /// RONV: This init is called when presenter is used to be set as window.
     /// RONV: It sets type on parent class as progress and
     /// RONV: No need to set PresenterType as default is window.
@@ -31,7 +33,8 @@ public class RONotificationProgressBarBanner: RONotificationView{
             let current = position > config.progressBarEndPosition ? config.progressBarEndPosition : position
             
             banner.animateProgressBarTo(position: current, final: config.progressBarEndPosition, completion: { [weak self](pos) in
-                if pos == config.progressBarEndPosition{
+                if pos == config.progressBarEndPosition && !(self?.isCompletedCalled)!{
+                    self?.isCompletedCalled = true
                     self?.onCompleted?()
                 }
             })

@@ -28,8 +28,11 @@ internal class RONotificationStatusBarBannerView: UIView {
         return UIView()
     }
     
-    private func setupUIFor(Configuration config: RONotificationConfiguration){
+    internal func setupUIFor(Configuration config: RONotificationConfiguration){
         bannerTitle.text = config.message
+        bannerTitle.textColor = config.messageTextColor
+        self.backgroundColor = config.backgroundColor
+        bannerTitle.font = config.messageFont
     }
     
     private func setupGesture(){
