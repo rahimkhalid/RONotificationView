@@ -1,4 +1,7 @@
-
+<img src="./ezgif.com-video-to-gif-2.gif" width="30%">
+<img src="./ezgif.com-video-to-gif-3.gif" width="30%">
+<img src="./ezgif.com-video-to-gif-4.gif" width="30%">
+<img src="./ezgif.com-video-to-gif.gif" width="30%">
 
 # RONotificationView
 [![CocoaPods](https://img.shields.io/cocoapods/p/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
@@ -64,7 +67,7 @@ isToAnimateView -- For enable/disable hide, show animations.
 duration -- If need to hide view after some time. [Set 0 if want to hide manually.].
 ```
 
-## Creating Configuration Object
+### Creating Configuration Object
 **For StatusBar Banner**
 ```
 let configuration = RONotificationStatusBarBannerConfiguration(message: MESSAGE, isToAnimateView: True)
@@ -82,14 +85,14 @@ let configuration = RONotificationProgressBarBannerConfiguration(progressBarColo
 let configuration = RONotificationCustomViewConfiguration(duration: DURATION, isToAnimateView: true)
 ```
 
-## To change value after creating Configuration:
+### To change value after creating Configuration:
 ```
 configuration.isToAnimateView = True
 ...
 ```
 2. After creating configuration for StatusBar Banner, You need to create StatusBar Banner Object.
 
-##Creating RONotificationView object:
+### Creating RONotificationView object:
 **For StatusBar Banner**
 ```
 banner = RONotificationStatusBarBanner(presentOn: configurationView, config: configuration)
@@ -111,12 +114,14 @@ banner = RONotificationCustomBanner(presentOn: configurationView, config: config
 banner = Notification_View_Type(config: configuration)
 ```
 3. Show your banner
+### Show Banner:
 ```
 banner.showBanner(onDismiss: Closure_For_On_Dismiss, onTap: Closure_For_On_Tap, onProgressCompleted: Closure_For_On_Progress_Completed)
 ```
 Closure are optional.
 
 4. Hide your banner.
+### Hide Banner:
 ```
 banner.hideBanner()
 ```
