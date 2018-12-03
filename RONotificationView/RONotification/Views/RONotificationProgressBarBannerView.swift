@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class RONotificationProgressBarBannerView: UIView {
+public class RONotificationProgressBarBannerView: UIView {
 
     @IBOutlet private weak var progressViewWidth: NSLayoutConstraint!
     @IBOutlet private weak var progressView: UIView!

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-internal class RONotificationMessageBannerView: UIView {
+public class RONotificationMessageBannerView: UIView {
     
     @IBOutlet private weak var dragView: UIView!
     @IBOutlet private weak var image: UIImageView!

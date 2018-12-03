@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-internal class RONotificationStatusBarBannerView: UIView {
+public class RONotificationStatusBarBannerView: UIView {
     
     @IBOutlet private weak var bannerTitle: UILabel!
     internal weak var delegate: RONotificationViewDelegate?
