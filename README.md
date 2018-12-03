@@ -21,7 +21,7 @@ pod 'RONotificationView'
 
 1. To use RONotification Banner, you would be needing to create RONotificationConfiguration object. This configuration object is used to customize you banner.
 
-###Customizations allowed:
+### Customizations allowed:
 **For StatusBar Banner**
 ```
 isToAnimateView -- For enable/disable hide, show animations.
@@ -64,7 +64,7 @@ isToAnimateView -- For enable/disable hide, show animations.
 duration -- If need to hide view after some time. [Set 0 if want to hide manually.].
 ```
 
-##Creating Configuration Object
+## Creating Configuration Object
 **For StatusBar Banner**
 ```
 let configuration = RONotificationStatusBarBannerConfiguration(message: MESSAGE, isToAnimateView: True)
@@ -82,7 +82,8 @@ let configuration = RONotificationProgressBarBannerConfiguration(progressBarColo
 let configuration = RONotificationCustomViewConfiguration(duration: DURATION, isToAnimateView: true)
 ```
 
-##To change value after creating Configuration:
+## To change value after creating Configuration:
+```
 configuration.isToAnimateView = True
 ...
 ```
