@@ -1,9 +1,13 @@
 ## Screenshots
 
-<img src="./ezgif.com-video-to-gif-2.gif" width="30%"/>
-<img src="./ezgif.com-video-to-gif-3.gif" width="30%"/>
-<img src="./ezgif.com-video-to-gif-4.gif" width="30%"/>
-<img src="./ezgif.com-video-to-gif.gif" width="30%"/>
+| Message Banner        | StatusBar Banner           |
+| ------------- |:------------- |
+| ![](https://github.com/rahimkhalid/RONotificationView/blob/master/MessageBanner.gif)      | ![](https://github.com/rahimkhalid/RONotificationView/blob/master/statusBar.gif) |
+
+| Progress Bar Banner        | Custom Banner           |
+| ------------- |:------------- |
+| ![](https://github.com/rahimkhalid/RONotificationView/blob/master/progressbar.gif)      | ![](https://github.com/rahimkhalid/RONotificationView/blob/master/CustomBanner.gif) |
+
 
 # RONotificationView
 [![CocoaPods](https://img.shields.io/cocoapods/p/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
