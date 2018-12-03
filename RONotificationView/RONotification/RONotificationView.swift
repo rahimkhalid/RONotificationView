@@ -105,7 +105,7 @@ public class RONotificationView {
     func setupUIForRootController(hide:Bool) {
         if hide{
             if let window = presenter as? UIWindow,
-                let navController = window.rootViewController as? UINavigationController{
+                let _ = window.rootViewController as? UINavigationController{
                 window.backgroundColor = UIColor.black
             }
         }else{

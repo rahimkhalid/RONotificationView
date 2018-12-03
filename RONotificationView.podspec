@@ -13,7 +13,7 @@ s.author           = { 'Rahim Khalid' => 'jessanirahim@gmail.com' }
 s.source           = { :git => 'https://github.com/rahimkhalid/RONotificationView.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '11.0'
-s.source_files = 'RONotificationView/RONotification/*'
+s.source_files = 'RONotificationView/RONotification/**/*'
 
 s.static_framework = true
 
