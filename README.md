@@ -1,3 +1,12 @@
+
+# RONotificationView
+[![CocoaPods](https://img.shields.io/cocoapods/p/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
+[![CocoaPods](https://img.shields.io/cocoapods/v/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
+## Requirements
+
+- iOS 11.0+
+- Xcode 9.0
+
 ## Screenshots
 
 | Message Banner        | StatusBar Banner           |
@@ -9,13 +18,6 @@
 | ![](https://github.com/rahimkhalid/RONotificationView/blob/master/progressbar.gif)      | ![](https://github.com/rahimkhalid/RONotificationView/blob/master/CustomBanner.gif) |
 
 
-# RONotificationView
-[![CocoaPods](https://img.shields.io/cocoapods/p/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
-[![CocoaPods](https://img.shields.io/cocoapods/v/RONotificationView.svg)](https://cocoapods.org/pods/RONotificationView)
-## Requirements
-
-- iOS 11.0+
-- Xcode 9.0
 
 ## Installation
 
@@ -28,114 +30,114 @@ pod 'RONotificationView'
 
 ## Usage
 
-1. To use RONotification Banner, you would be needing to create RONotificationConfiguration object. This configuration object is used to customize you banner.
+1. To use RONotificationView, you would be needing to create RONotificationConfiguration object. This configuration object is used to customize you banner.
 
-### Customizations allowed:
-**For StatusBar Banner**
-```
-isToAnimateView -- For enable/disable hide, show animations.
-duration -- If need to hide view after some time. [Set 0 if want to hide manually.].
-messageTextColor -- To set message text color.
-backgroundColor -- To set banner background color.  
-message -- To set message.
-messageFont -- To set message Font.
-```
-**For Message Banner**
-```
-isToAnimateView -- For enable/disable hide, show animations.
-messageFont -- To set message Font.
-titleFont -- To set title Font.
-duration -- If need to hide view after some time. [Set 0 if want to hide manually.].
-titleTextColor -- To set title text color.
-messageTextColor -- To set message text color.
-backgroundColor -- To set banner background color.  
-image -- To show image on left side of banner.
-title -- To set title.
-message -- To set message.
-isToShowLoader -- To show loader on right side of banner
-```
-**For ProgressBar Banner**
-```
-isToAnimateView -- For enable/disable hide, show animations.
-backgroundColor -- To set banner background color.  
-isToShowProgressCount -- To show ProgressCount in centre of progressBar
-progressBarColor -- To set progressbar color
-progressCountFont -- To set count font.
-progressCountColor  -- To set count text color.
-progressBarStartPosition -- To set start value for progressBar (default = 0)
-progressBarCurrentPosition -- To set current value for progressBar (incase to start from different value other than start position)
-progressBarEndPosition -- To set end value for progressBar
-isToAnimateProgressBarGradient -- Used to animate progressbar
-```
-**For Custom Banner**
-```
-isToAnimateView -- For enable/disable hide, show animations.
-duration -- If need to hide view after some time. [Set 0 if want to hide manually.].
-```
+* ### Customizations allowed:
+  + **For StatusBar Banner**
 
-### Creating Configuration Object
-**For StatusBar Banner**
-```
-let configuration = RONotificationStatusBarBannerConfiguration(message: MESSAGE, isToAnimateView: True)
-```
-**For Message Banner**
-```
-let configuration = RONotificationMessageConfiguration(title: TITLE, message: MESSAGE, isToAnimateView: true)
-```
-**For ProgressBar Banner**
-```
-let configuration = RONotificationProgressBarBannerConfiguration(progressBarColor: BAR_COLOR, progressBarStartPosition: 0, progressBarEndPosition: 100, isToAnimateView: true)
-```
-**For Custom Banner**
-```
-let configuration = RONotificationCustomViewConfiguration(duration: DURATION, isToAnimateView: true)
-```
+    `isToAnimateView (Bool)` -- For enable/disable hide, show animations<br />
+    `duration (TimeInterval)` -- If need to hide view after some time. [Set 0 if want to hide manually]<br />
+    `messageTextColor (UIColor)` -- To set message text color<br />
+    `backgroundColor (UIColor)` -- To set banner background color<br /> 
+    `message (String)` -- To set message<br />
+    `messageFont (UIFont)` -- To set message Font<br />
 
-### To change value after creating Configuration:
-```
-configuration.isToAnimateView = True
-...
-```
+  + **For Message Banner**
+
+    `isToAnimateView (Bool)` -- For enable/disable hide, show animations<br />
+    `messageFont (UIFont)` -- To set message Font<br />
+    `titleFont (UIFont)` -- To set title Font<br />
+    `duration (TimeInterval)` -- If need to hide view after some time. [Set 0 if want to hide manually]<br />
+    `titleTextColor (UIColor)` -- To set title text color<br />
+    `messageTextColor (UIColor)` -- To set message text color<br />
+    `backgroundColor (UIColor)` -- To set banner background color<br /> 
+    `image (UIImage)` -- To show image on left side of banner<br />
+    `title (String)` -- To set title<br />
+    `message (String)` -- To set message<br />
+    `isToShowLoader (Bool)` -- To show loader on right side of banner<br />
+
+  + **For ProgressBar Banner**
+
+    `isToAnimateView (Bool)` -- For enable/disable hide, show animations<br />
+    `backgroundColor (UIColor)` -- To set banner background color<br />
+    `isToShowProgressCount (Bool)` -- To show ProgressCount in centre of progressBar<br />
+    `progressBarColor (UIColor)` -- To set progressbar color<br />
+    `progressCountFont (UIFont)` -- To set count font<br />
+    `progressCountColor (UIColor)`  -- To set count text color<br />
+    `progressBarStartPosition (Float)` -- To set start value for progressBar (default = 0)<br />
+    `progressBarCurrentPosition (Float)` -- To set current value for progressBar (incase to start from different value other than start position)<br />
+    `progressBarEndPosition (Float)` -- To set end value for progressBar<br />
+    `isToAnimateProgressBarGradient (Bool)` -- Used to animate progressbar<br />
+
+  + **For Custom Banner**
+
+    `isToAnimateView (Bool)` -- For enable/disable hide, show animations<br />
+    `duration (TimeInterval)` -- If need to hide view after some time. [Set 0 if want to hide manually]<br />
+
+
+* ### Creating Configuration Object
+  + **For StatusBar Banner**
+    ```
+    let configuration = RONotificationStatusBarBannerConfiguration(message: MESSAGE, isToAnimateView: True)
+    ```
+  + **For Message Banner**
+    ```
+    let configuration = RONotificationMessageConfiguration(title: TITLE, message: MESSAGE, isToAnimateView: true)
+    ```
+  + **For ProgressBar Banner**
+    ```
+    let configuration = RONotificationProgressBarBannerConfiguration(progressBarColor: BAR_COLOR, progressBarStartPosition: 0, progressBarEndPosition: 100, isToAnimateView: true)
+    ```
+  + **For Custom Banner**
+    ```
+    let configuration = RONotificationCustomViewConfiguration(duration: DURATION, isToAnimateView: true)
+    ```
+
+* ### To change value after creating Configuration:
+    ```
+    configuration.isToAnimateView = True
+    ...
+    ```
 2. After creating configuration for StatusBar Banner, You need to create StatusBar Banner Object.
 
-### Creating RONotificationView object:
-**For StatusBar Banner**
-```
-banner = RONotificationStatusBarBanner(presentOn: configurationView, config: configuration)
-```
-**For Message Banner**
-```
-banner = RONotificationMessageBanner(presentOn: configurationView, config: configuration)
-```
-**For ProgressBar Banner**
-```
-banner = RONotificationProgressBarBanner(presentOn: configurationView, config: configuration)
-```
-**For Custom Banner**
-```
-banner = RONotificationCustomBanner(presentOn: configurationView, config: configuration, customView:customView)
-```
-**For Banner on Window**
-```
-banner = Notification_View_Type(config: configuration)
-```
+* ### Creating RONotificationView object:
+  + **For StatusBar Banner**
+    ```
+    banner = RONotificationStatusBarBanner(presentOn: configurationView, config: configuration)
+    ```
+  + **For Message Banner**
+    ```
+    banner = RONotificationMessageBanner(presentOn: configurationView, config: configuration)
+    ```
+  + **For ProgressBar Banner**
+    ```
+    banner = RONotificationProgressBarBanner(presentOn: configurationView, config: configuration)
+    ```
+  + **For Custom Banner**
+    ```
+    banner = RONotificationCustomBanner(presentOn: configurationView, config: configuration, customView:customView)
+    ```
+  + **For Banner on Window**
+    ```
+    banner = Notification_View_Type(config: configuration)
+    ```
 3. Show your banner
-### Show Banner:
-```
-banner.showBanner(onDismiss: Closure_For_On_Dismiss, onTap: Closure_For_On_Tap, onProgressCompleted: Closure_For_On_Progress_Completed)
-```
-Closure are optional.
+* ### Show Banner:
+    ```
+    banner.showBanner(onDismiss: Closure_For_On_Dismiss, onTap: Closure_For_On_Tap, onProgressCompleted: Closure_For_On_Progress_Completed)
+    ```
+    Closure are optional.
 
 4. Hide your banner.
-### Hide Banner:
-```
-banner.hideBanner()
-```
-**For Auto-Hide Banner**
-```
-banner.showBanner(onDismiss: nil, onTap: nil)
-```
-OnDismiss closure will be called.
+* ### Hide Banner:
+    ```
+    banner.hideBanner()
+    ```
+  + **For Auto-Hide Banner**
+    ```
+    banner.showBanner(onDismiss: nil, onTap: nil)
+    ```
+    OnDismiss closure will be called.
 
 ## Licence
 
