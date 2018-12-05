@@ -122,7 +122,7 @@ pod 'RONotificationView'
     banner = Notification_View_Type(config: configuration)
     ```
 * ### Update Banner Configurations:
-    Want to change configuration for some banner ? 🤔
+    Want to change configuration for same banner ? 🤔
     ```
     banner.updateConfiguration(config: configuration)
     ```
