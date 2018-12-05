@@ -121,6 +121,11 @@ pod 'RONotificationView'
     ```
     banner = Notification_View_Type(config: configuration)
     ```
+* ### Update Banner Configurations:
+    Want to change configuration for some banner ? 🤔
+    ```
+    banner.updateConfiguration(config: configuration)
+    ```
 3. Show your banner
 * ### Show Banner:
     ```
@@ -141,5 +146,5 @@ pod 'RONotificationView'
 
 ## Licence
 
-Folding cell is released under the MIT license.
+RONotificationView is released under the MIT license.
 See [LICENSE](./LICENSE) for details.
