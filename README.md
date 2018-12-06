@@ -7,7 +7,7 @@
 - iOS 11.0+
 - Xcode 9.0
 
-## Screenshots
+## Demo
 
 | Message Banner        | StatusBar Banner           |
 | ------------- |:------------- |
