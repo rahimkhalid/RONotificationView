@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'RONotificationView'
-s.version          = '0.1.0'
+s.version          = '0.1.1'
 s.summary          = 'Helps you add different types of Notification Banners.'
 
 s.description      = <<-DESC
